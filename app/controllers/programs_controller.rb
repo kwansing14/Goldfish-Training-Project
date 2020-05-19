@@ -23,6 +23,7 @@ class ProgramsController < ApplicationController
     redirect_to @program
     else
       render 'new'
+    end
   end
 
   def update
