@@ -9,10 +9,14 @@ document.addEventListener('DOMContentLoaded', function() {
         indicators: true
     });
 
-    // var instance = M.Carousel.init({
-    //     fullWidth: true
-    // });
-    // console.log(instance)
+    setInterval(()=>{
+        M.Carousel.getInstance(elems[0]).next();
+    },5000);
+
+
+    let elems2 = document.querySelectorAll('.tabs');
+    var instance = M.Tabs.init(elems2);
 });
+
 
   console.log("hello worlddddddddd")
