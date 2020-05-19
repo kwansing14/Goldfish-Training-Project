@@ -1,6 +1,18 @@
 class ProgramsController < ApplicationController
   def index
     @programs = Program.all
+    # validated working. into views
+    # <% @programs.each do |program|%>
+    # <li><%= program.name %></li><br>
+    # .name
+    # .cost
+    # .contact_no
+    # .duration
+    # for retrieval of info
+    @programs_users = User.first.programs
+    # <% @programs_users.each do |programuser|%>
+    # <li><%= programuser.name %></li><br>
+    # to retrieve information from the controller
   end
 
   def show
