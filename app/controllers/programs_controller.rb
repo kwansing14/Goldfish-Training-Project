@@ -1,6 +1,19 @@
 class ProgramsController < ApplicationController
   def index
     @programs = Program.all
+    # validated working. into views
+    # <% @programs.each do |program|%>
+    # <li><%= program.name %></li><br>
+    # .name
+    # .cost
+    # .contact_no
+    # .duration
+    # for retrieval of info
+    @programs_users = User.first.programs
+    # this is to retreive from the flip table
+    # <% @programs_users.each do |programuser|%>
+    # <li><%= programuser.name %></li><br>
+    # to retrieve information from the controller
   end
 
   def show
@@ -12,6 +25,7 @@ class ProgramsController < ApplicationController
   end
 
   def edit
+    @program = Program.find(params[:id])
   end
 
   def create
@@ -22,16 +36,21 @@ class ProgramsController < ApplicationController
     redirect_to @program
     else
       render 'new'
+    end
   end
 
   def update
+    @program = Program.find(params[:id])
   end
 
   def destroy
+    @program = Program.find(params[:id])
+    @program.destroy
+    redirect_to programs_path
   end
 
 private
   def program_params
-    params.require(:program).permit(:duration, :cost, :contact_number)
+    params.require(:program).permit(:duration, :cost, :contact_number,:name)
   end
 end
