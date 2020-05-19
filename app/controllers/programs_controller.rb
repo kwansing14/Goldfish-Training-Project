@@ -8,6 +8,7 @@ class ProgramsController < ApplicationController
   end
 
   def new
+    @programs = Program.all
   end
 
   def edit
@@ -15,8 +16,12 @@ class ProgramsController < ApplicationController
 
   def create
     @program = Program.new(program_params)
-    @program.save
+    @program.user = current_user
+
+    if @program.save
     redirect_to @program
+    else
+      render 'new'
   end
 
   def update
