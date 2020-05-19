@@ -12,6 +12,7 @@ class ProgramsController < ApplicationController
   end
 
   def edit
+    @program = Program.find(params[:id])
   end
 
   def create
@@ -25,13 +26,17 @@ class ProgramsController < ApplicationController
   end
 
   def update
+    @program = Program.find(params[:id])
   end
 
   def destroy
+    @program = Program.find(params[:id])
+    @program.destroy
+    redirect_to programs_path
   end
 
 private
   def program_params
-    params.require(:program).permit(:duration, :cost, :contact_number)
+    params.require(:program).permit(:duration, :cost, :contact_number,:name)
   end
 end
