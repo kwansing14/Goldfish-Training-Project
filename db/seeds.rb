@@ -5,3 +5,6 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+soccer = Program.create(
+  :duration => '2 days', :cost => '100', :contact_no => '12345678'
+)
