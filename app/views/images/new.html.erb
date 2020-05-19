@@ -1,0 +1,14 @@
+<%= form_with scope: :image, url: images_path, local: true do |form| %>
+
+	<h1>
+		Upload an image
+	</h1>
+
+  <p>
+	  <%= form.collection_select :program_id, @programs, :id, :name, {}, {style: "display: block"} %>
+	</p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
