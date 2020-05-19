@@ -9,10 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
         indicators: true
     });
 
-    // var instance = M.Carousel.init({
-    //     fullWidth: true
-    // });
-    // console.log(instance)
+    setInterval(()=>{
+        M.Carousel.getInstance(elems[0]).next();
+    },5000);
 });
 
   console.log("hello worlddddddddd")
