@@ -6,27 +6,30 @@
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <%= javascript_include_tag 'application' %>
+
   </head>
 
   <body class="teal lighten-2">
   	<nav>
 	    <div class="nav-wrapper">
-	    	<div class="row" style="border: 2px solid green">
+	    	<div class="row">
 	    		<div class="col s4">
-			      <a href="#" class="brand-logo" style="margin-left: 30px; border: 2px solid grey">Gold fish logo
+			      <a href="#" class="brand-logo">Gold fish logo
 			      </a>
 			    </div>
-			    <div class="col s4 center-align">
+			    <div class="col s4 center">
 		     		Goldfish training program
 		     	</div>
-		     	<div class="col s4 right" style="border: 2px solid pink">
+		     	<div class="col s4">
 		      	<!-- user log in -->
-			      <ul id="nav-mobile" class="right hide-on-med-and-down" style="border: 2px solid blue; padding: 0px; margin: 0px">
+			      <ul>
 			      	<% if user_signed_in? %>
-			        <li><%= link_to 'log out', destroy_user_session_url, method: :delete %></li>
-			        <% else %>
-							<li><%= link_to 'log in', new_user_session_url %></li>
+				        <li class="right"><%= link_to 'log out', destroy_user_session_url, method: :delete %></li>
+				        <% else %>
+								<li class="right"><%= link_to 'log in', new_user_session_url %></li>
 							<% end %>
 			      </ul>
 			      <!-- End of user log in -->
@@ -35,5 +38,6 @@
 	    </div>
 	  </nav>
     <%= yield %>
+
   </body>
 </html>
