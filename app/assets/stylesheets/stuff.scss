@@ -1,0 +1,29 @@
+body {
+  background-color: purple;
+  margin: 0px;
+  padding: 0px;
+}
+
+.tprogram div img {
+	width:100%
+}
+
+.carousel-slider {
+    height: 400px !important;
+}
+
+.card {
+	background-color: black;
+	border: 2px solid red;
+}
+
+.innertext {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	font-size: 20px;
+	color: #fff;
+	width: 100%;
+	text-align: center;
+	background-color: rgba(0, 0, 0, 0.6);
+}
