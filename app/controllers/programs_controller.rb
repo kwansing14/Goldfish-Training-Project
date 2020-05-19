@@ -10,6 +10,7 @@ class ProgramsController < ApplicationController
     # .duration
     # for retrieval of info
     @programs_users = User.first.programs
+    # this is to retreive from the flip table
     # <% @programs_users.each do |programuser|%>
     # <li><%= programuser.name %></li><br>
     # to retrieve information from the controller
