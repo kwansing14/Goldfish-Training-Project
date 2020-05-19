@@ -1,0 +1,36 @@
+<%= form_with scope: :image, url: images_path, local: true do |form| %>
+
+	<h1>
+		Upload an image
+	</h1>
+
+  <div>
+	  <%= form.collection_select :program_id, @programs, :id, :name, {}, {style: "display: block"} %>
+	</div>
+  <div>
+  	<div>Image link</div>
+    <button type="button" id="upload_widget" class="cloudinary-button">Upload files</button>
+	  <%= form.text_area :image_url, :readonly => true, :id => "image-after-upload"%>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+<script type="text/javascript">
+  var myWidget = cloudinary.createUploadWidget({
+    cloudName: 'travisenquiry',
+    uploadPreset: 'aheccwh1'}, (error, result) => {
+      if (!error && result && result.event === "success") {
+        myWidget.close();
+        document.getElementById("image-after-upload").innerHTML = result.info.url;
+        document.getElementById("upload_widget").style.visibility = "hidden";
+      }
+    }
+  )
+
+  document.getElementById("upload_widget").addEventListener("click", function(){
+      myWidget.open();
+    }, false);
+</script>

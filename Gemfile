@@ -3,6 +3,8 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.5.1'
 
+gem 'cloudinary'
+
 gem 'materialize-sass', '~> 1.0.0'
 
 gem 'devise'
