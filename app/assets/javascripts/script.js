@@ -13,10 +13,7 @@ document.addEventListener('DOMContentLoaded', function() {
         M.Carousel.getInstance(elems[0]).next();
     },5000);
 
-
-    let elems2 = document.querySelectorAll('.tabs');
-    var instance = M.Tabs.init(elems2);
 });
 
 
-  console.log("hello worlddddddddd")
+console.log("hello worlddddddddd")
