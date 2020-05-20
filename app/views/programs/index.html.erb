@@ -25,12 +25,19 @@
 		    <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
 		</div>
 
+		<div class='row center white-text' style="background-color:#64B5F6; margin-top:15px; font-size: 30px; font-family:'ubuntu'">
+			List of Training Programs
+		</div>
+
 		<div class="row valign-wrapper">
 			<!-- rows 1 of training program -->
 			<div class="col s3">
 				<div class='card hoverable'>
 					<div class="card-image">
-						<img src="https://cdn.thisiswhyimbroke.com/images/goldfish-soccer-game-training-kit-640x533.jpg"></img>
+						<%= link_to program_path(@programs.first) do %>
+						  <%= image_tag program.image.first.image_url %>
+						<% end %>
+						<!-- <img src="https://cdn.thisiswhyimbroke.com/images/goldfish-soccer-game-training-kit-640x533.jpg"></img> -->
 		        <span class="innertext">
 		        	Soccer
 		        </span>
