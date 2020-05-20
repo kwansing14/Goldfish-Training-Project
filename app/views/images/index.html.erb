@@ -1,7 +1,44 @@
-<% @programs.each do |program| %>
-	<% if program.image.first %>
-		<%= link_to program_images_path(program) do %>
-			<%= image_tag program.image.first.image_url %>
+<div class="container">
+	<% @programs.each do |program| %>
+		<% if program.image.first %>
+			<div class="row">
+				<div class="tprogram row">
+					<div class="col s4">
+						<div class='card hoverable'>
+							<div class="card-image">
+								<%= link_to program_images_path(program) do %>
+									<%= image_tag program.image.first.image_url %>
+								<% end %>
+								<div class="row" style="border: 2px blue solid">
+					        <span class="innertext">
+					        	<%= program.name %>
+					        </span>
+					      </div>
+				      </div>
+			      </div>
+			    </div>
+				</div>
+			</div>
 		<% end %>
 	<% end %>
-<% end %>
+</div>
+
+		<div class="row">
+			<!-- rows 1 of training program -->
+			<div class="tprogram row">
+				<div class="col s6">
+					<div class='card hoverable'>
+						<div class="card-image">
+							<img src="https://cdn.thisiswhyimbroke.com/images/goldfish-soccer-game-training-kit-640x533.jpg"></img>
+							<div class="row" style="border: 2px blue solid">
+				        <span class="innertext">
+				        	Training Program - Soccer
+				        </span>
+				      </div>
+			      </div>
+			    </div>
+				</div>
+				<div class="col s6">
+					<img src="http://petshoptop.ru/media/fe/7b/3e/fe7b3e782fcd459ca27b7695b42dac79/578fc885aaba2.jpg">
+				</div>
+			</div>
