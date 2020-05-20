@@ -49,6 +49,11 @@ class ProgramsController < ApplicationController
 
   def update
     @program = Program.find(params[:id])
+    if @program.update(program_params)
+    redirect_to @program
+    else
+      render 'edit'
+    end
   end
 
   def destroy
@@ -60,5 +65,9 @@ class ProgramsController < ApplicationController
 private
   def programs_user_params
     params.require(:program).permit(:user_id,:program_id)
+  end
+
+  def program_params
+    params.require(:program).permit(:name, :cost, :contact_no, :duration)
   end
 end
