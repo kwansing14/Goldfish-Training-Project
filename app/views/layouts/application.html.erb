@@ -8,6 +8,7 @@
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
     <%= javascript_include_tag 'application' %>
 
   </head>
@@ -38,32 +39,28 @@
 	    </div>
 	  </nav>
     <%= yield %>
-  <footer class="page-footer">
-    <div class="container">
-      <div class="row">
-        <div class="col l6 s12">
-          <h5 class="white-text">Do follow us on our social media</h5>
-          <div class='row' style='border:2px solid black'>
-          <p class="grey-text text-lighten-4">
-          	<%= image_tag 'icons/001-youtube.png', :class=>"icons" %></p>
+  <footer class="page-footer" style="padding:0">
+      <div class="row" style="margin:0" >
+        <div class="col l5 offset-l1 s12 center">
+          <h5 class="white-text" style="font-family: 'Ubuntu';font-size:14px; margin-bottom: 20px">Do follow us on our social media</h5>
+          <div class='row'>
+	          	<%= image_tag 'icons/001-youtube.png', :class=>"icons" %>
+	          	<%= image_tag 'icons/007-twitter-1.png', :class=>"icons" %>
+	          	<%= image_tag 'icons/023-facebook.png', :class=>"icons" %>
+	          	<%= image_tag 'icons/020-instagram.png', :class=>"icons" %>
+	          	<%= image_tag 'icons/017-pinterest.png', :class=>"icons" %>
+	        </div>
         </div>
-        </div>
-        <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Links</h5>
+        <div class="col l5 s12 center">
+          <h5 class="white-text" style="font-family: 'Ubuntu';font-size:14px">Links</h5>
           <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!" style="font-family: 'Ubuntu';font-size:10px">About Us</a></li>
           </ul>
         </div>
       </div>
     </div>
-    <div class="footer-copyright">
-      <div class="container">
-      © 2020 Copyright
-      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
-      </div>
+    <div class="footer-copyright" style="min-height:16px">
+      <div style="margin:0 20px; font-size: 11px">© 2020 Copyright</div>
     </div>
   </footer>
   </body>

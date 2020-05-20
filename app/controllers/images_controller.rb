@@ -11,7 +11,6 @@ class ImagesController < ApplicationController
 
   def create
     @image = Image.new(image_params)
-
     @image.save
     redirect_to @image
   end
