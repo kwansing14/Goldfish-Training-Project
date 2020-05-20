@@ -1,0 +1,27 @@
+<h1>Edit program</h1>
+
+<%= form_with scope: :program, model: @program, local: true do |form| %>
+
+	<p>
+	  <%= form.label :name %><br>
+	  <%= form.text_field :name %>
+	</p>
+  <p>
+    <%= form.label :cost %><br>
+    <%= form.text_field :cost %>
+  </p>
+  <p>
+    <%= form.label :duration %><br>
+    <%= form.text_field :duration %>
+  </p>
+  <p>
+    <%= form.label :contact_no %><br>
+    <%= form.text_field :contact_no %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', root_path %>
