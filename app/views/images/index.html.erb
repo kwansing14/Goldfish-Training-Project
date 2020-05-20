@@ -1,0 +1,7 @@
+<% @programs.each do |program| %>
+	<% if program.image.first %>
+		<%= link_to program_images_path(program) do %>
+			<%= image_tag program.image.first.image_url %>
+		<% end %>
+	<% end %>
+<% end %>
