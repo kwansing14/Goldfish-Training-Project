@@ -1,4 +1,7 @@
 class ProgramsController < ApplicationController
+
+  before_action :authenticate_user!, :except => [ :show, :index ]
+
   def index
     @programs = Program.all
     # validated working. into views
@@ -14,6 +17,10 @@ class ProgramsController < ApplicationController
     # <% @programs_users.each do |programuser|%>
     # <li><%= programuser.name %></li><br>
     # to retrieve information from the controller
+    respond_to do |format|
+      format.html # index.html.erb
+      format.json { render json: @programs }
+    end
   end
 
   def show
@@ -29,11 +36,11 @@ class ProgramsController < ApplicationController
   end
 
   def create
-    @program = Program.new(program_params)
+    @program = Programs_User.new(programs_user_params)
     @program.user = current_user
 
     if @program.save
-    redirect_to @program
+    redirect_to programs_url
     else
       render 'new'
     end
@@ -50,7 +57,7 @@ class ProgramsController < ApplicationController
   end
 
 private
-  def program_params
-    params.require(:program).permit(:duration, :cost, :contact_number,:name)
+  def programs_user_params
+    params.require(:program).permit(:user_id,:program_ids =>[])
   end
 end
