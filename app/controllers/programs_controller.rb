@@ -36,6 +36,7 @@ class ProgramsController < ApplicationController
   end
 
   def create
+
     @program = Programs_User.new(programs_user_params)
     @program.user = current_user
 
@@ -58,6 +59,6 @@ class ProgramsController < ApplicationController
 
 private
   def programs_user_params
-    params.require(:program).permit(:user_id,:program_ids =>[])
+    params.require(:program).permit(:user_id,:program_id)
   end
 end
