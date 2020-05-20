@@ -31,50 +31,23 @@
 
 		<div class="row valign-wrapper">
 			<!-- rows 1 of training program -->
-			<div class="col s3">
-				<div class='card hoverable'>
-					<div class="card-image">
-						<%= link_to program_path(@programs.first) do %>
-						  <%= image_tag program.image.first.image_url %>
-						<% end %>
-						<!-- <img src="https://cdn.thisiswhyimbroke.com/images/goldfish-soccer-game-training-kit-640x533.jpg"></img> -->
-		        <span class="innertext">
-		        	Soccer
-		        </span>
-		      </div>
-		    </div>
-			</div>
-			<div class="col s3">
-				<div class='card hoverable'>
-					<div class="card-image">
-						<img src="http://petshoptop.ru/media/fe/7b/3e/fe7b3e782fcd459ca27b7695b42dac79/578fc885aaba2.jpg">
-		        <span class="innertext">
-		        	Basketball
-		        </span>
-		      </div>
-		    </div>
-			</div>
-			<!-- rows 2 of training program -->
-			<div class="col s3">
-				<div class='card hoverable'>
-					<div class="card-image">
-						<img src="http://petshoptop.ru/media/8e/d2/0f/8ed20fb63484a13d6e8da038b71b78bf/578fc89c25579.jpg">
-		        <span class="innertext">
-		        	Tricks
-		        </span>
-		      </div>
-		    </div>
-			</div>
-			<div class="col s3">
-				<div class='card hoverable'>
-					<div class="card-image">
-						<img src="https://i0.wp.com/hybridtechcar.com/wp-content/uploads/2013/11/ribka_02.jpg?resize=650%2C497">
-		        <span class="innertext">
-		        	Football
-		        </span>
-		      </div>
-		    </div>
-			</div>
+			<% @programs.each do |program| %>
+				<% if program.image.first %>
+					<div class="col s3">
+						<div class='card hoverable'>
+							<div class="card-image">
+								<%= link_to program_path(program) do %>
+								  <%= image_tag program.image.first.image_url %>
+								<% end %>
+								<!-- <img src="https://cdn.thisiswhyimbroke.com/images/goldfish-soccer-game-training-kit-640x533.jpg"></img> -->
+				        <span class="innertext">
+				        		<%= program.name %>
+				        </span>
+				      </div>
+				    </div>
+					</div>
+				<% end %>
+			<% end %>
 		</div>
 	</div>
 </div>
