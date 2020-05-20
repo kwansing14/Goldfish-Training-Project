@@ -14,14 +14,14 @@ body {
 
 .card {
 	background-color: black;
-	border: 2px solid red;
+	margin:0px
 }
 
 .innertext {
 	position: absolute;
-	bottom: 0px;
+	bottom: 3px;
 	left: 0px;
-	font-size: 20px;
+	font-size: 14px;
 	color: #fff;
 	width: 100%;
 	text-align: center;
