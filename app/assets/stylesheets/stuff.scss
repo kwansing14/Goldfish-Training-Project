@@ -14,16 +14,104 @@ body {
 
 .card {
 	background-color: black;
-	border: 2px solid red;
+	margin:0px
 }
 
 .innertext {
 	position: absolute;
-	bottom: 0px;
+	bottom: 3px;
 	left: 0px;
-	font-size: 20px;
+	font-size: 14px;
 	color: #fff;
 	width: 100%;
 	text-align: center;
 	background-color: rgba(0, 0, 0, 0.6);
+}
+
+
+/*Name underline style*/
+.btnline {
+  text-decoration: none;
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+  background-color: rgba(0,0,0,0.5);
+}
+.btnline :after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.btnline :hover:after {
+	color: #fff;
+  width: 100%;
+  left: 0;
+}
+.btnline :hover {
+	color: #fff;
+}
+
+/* Line to box border button style*/
+.example_d {
+color: #fff !important;
+background: rgba(0,0,0,0);
+font-size: 14px;
+padding: 3px 12px;
+margin-top: 5px;
+border: 2px solid #fff !important;
+display: inline-block;
+transition: all 0.3s ease 0s;
+}
+
+.example_d:hover {
+color: #fff !important;
+border-radius: 20px;
+background: rgba(0,0,0,0.8);
+border-color: #fff !important;
+transition: all 0.3s ease 0s;
+}
+
+/*border animation by zach saucier*/
+html, body {
+  background: rgb(20,20,20);
+  text-align: center;
+  height: 100%;
+  overflow: hidden;
+}
+.svg-wrapper {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+	  margin: 0 auto;
+  width: 320px;
+}
+.shape {
+  stroke-dasharray: 140 540;
+  stroke-dashoffset: -474;
+  stroke-width: 8px;
+  fill: transparent;
+  stroke: #19f6e8;
+  border-bottom: 5px solid black;
+  transition: stroke-width 1s, stroke-dashoffset 1s, stroke-dasharray 1s;
+}
+.text {
+  font-family: 'Roboto Condensed';
+  font-size: 22px;
+  line-height: 32px;
+  letter-spacing: 8px;
+  color: #fff;
+  top: -48px;
+  position: relative;
+}
+.svg-wrapper:hover .shape {
+  stroke-width: 2px;
+  stroke-dashoffset: 0;
+  stroke-dasharray: 760;
 }
