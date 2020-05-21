@@ -1,6 +1,8 @@
 <!-- code consists of unclosed div on first part for column rails manipulation purpose so alignment may look wrong -->
 <div class="container">
 		<br /><br />
+		<%= link_to 'Back', images_path, :class => "example_d2" %>
+		<br /><br />
 		<% @images.each_with_index do |image, index| %>
 			<% if index % 4 == 0 %>
 				<div class="row">
