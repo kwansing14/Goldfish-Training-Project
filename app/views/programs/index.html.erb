@@ -11,7 +11,7 @@
 			  		Click here to contact one of our trainers now!
 			  	</div>
 			    <div class="button_cont" align="center">
-		    		<a class="example_d" rel="nofollow noopener" >
+		    		<a href="mailto:goldfishtrainerds@generalassemb.ly" class="example_d" rel="nofollow noopener" >
 		    			<b>Click here</b>
 		    		</a>
 	    		</div>
@@ -28,21 +28,23 @@
 
 		<div class="row">
 			<!-- rows 1 of training program -->
-			<% @programs.each do |program| %>
+			<% @programs.each do |program, index| %>
 				<% if program.image.first %>
-					<div class="col m3 s6">
-						<div class='card hoverable'>
-							<div class="card-image">
-								<%= link_to program_path(program) do %>
-								  <%= image_tag program.image.first.image_url %>
-								<% end %>
-								<!-- <img src="https://cdn.thisiswhyimbroke.com/images/goldfish-soccer-game-training-kit-640x533.jpg"></img> -->
-				        <span class="innertext">
-				        		<%= program.name %>
-				        </span>
-				      </div>
-				    </div>
-					</div>
+
+						<div class="col s6 m3">
+							<div class='card hoverable'>
+								<div class="card-image">
+									<%= link_to program_path(program) do %>
+									  <%= image_tag program.image.first.image_url %>
+									<% end %>
+									<!-- <img src="https://cdn.thisiswhyimbroke.com/images/goldfish-soccer-game-training-kit-640x533.jpg"></img> -->
+					        <span class="innertext" >
+					        		<%= program.name %>
+					        </span>
+					      </div>
+					    </div>
+						</div>
+
 				<% end %>
 			<% end %>
 		</div>

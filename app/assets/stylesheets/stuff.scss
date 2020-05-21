@@ -99,6 +99,26 @@ border-color: #fff !important;
 transition: all 0.3s ease 0s;
 }
 
+/* Line to box border button style for login button*/
+.example_d3 {
+color: #039BE5 !important;
+background: rgba(0,0,0,0);
+font-size: 14px;
+padding: 3px 10px;
+margin-top: 5px;
+border: 2px solid #039BE5 !important;
+display: inline-block;
+transition: all 0.3s ease 0s;
+}
+
+.example_d3:hover {
+color: #fff !important;
+border-radius: 20px;
+background: rgba(0,0,0,0.8);
+border-color: #fff !important;
+transition: all 0.3s ease 0s;
+}
+
 .icons {
 	padding:0;
 	width:25px;
