@@ -7,7 +7,7 @@
 					<div class="col s3">
 						<div class='card hoverable'>
 							<div class="card-image">
-								<%= image_tag image.image_url %>
+								<%= image_tag image.image_url, :class => "materialboxed" %>
 				      </div>
 			      </div>
 			    </div>
@@ -15,7 +15,7 @@
 				<div class="col s3">
 					<div class='card hoverable'>
 						<div class="card-image">
-							<%= image_tag image.image_url %>
+							<%= image_tag image.image_url, :class => "materialboxed" %>
 			      </div>
 		      </div>
 		    </div>
@@ -32,3 +32,4 @@
 		<% end %>
   </div>
 </div>
+<%= javascript_include_tag 'image.js' %>
