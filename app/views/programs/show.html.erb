@@ -1,20 +1,34 @@
 <div class='container'>
-	<div class="row">
-	  <div class="carousel carousel-slider" style="margin-top: 70px">
-	    <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/800/400/food/1"></a>
-	    <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/800/400/food/2"></a>
-	    <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/800/400/food/3"></a>
-	    <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/800/400/food/4"></a>
-	  </div>
+	<div class="row center" style="margin-top: 50px; width: 60%; max-height:210px">
+		  <div class="carousel carousel-slider">
+		  	<% @images.each do |image| %>
+			    <a class="carousel-item">
+			    	<%= image_tag image.image_url , :class=>"showImg"%>
+			    </a>
+		    <% end %>
+		</div>
+	</div>
+	<div class='row center white-text' style="background-color:#64B5F6; margin-top:15px; font-size: 30px; font-family:'ubuntu'">
+			<%= @program.name %>
 	</div>
 	<div class='row'>
 		<ul class="collapsible">
-			<% @programs.each do |program| %>
-		    <li>
-		      <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-		      <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-		    </li>
-		  <% end %>
-  </ul>
+			<li>
+	      <div class="collapsible-header"><i class="material-icons">description</i>Course Details</div>
+	      <div class="collapsible-body"><span><%= @program.details %></span></div>
+	    </li>
+	    <li>
+	      <div class="collapsible-header"><i class="material-icons">timelapse</i>Duration of the coure</div>
+	      <div class="collapsible-body"><span><%= @program.duration %></span></div>
+	    </li>
+	    <li>
+	      <div class="collapsible-header"><i class="material-icons">attach_money</i>Cost of the course</div>
+	      <div class="collapsible-body"><span><%= @program.cost %></span></div>
+	    </li>
+	    <li>
+	      <div class="collapsible-header"><i class="material-icons">contact_phone</i>Contact no. of the trainer</div>
+	      <div class="collapsible-body"><span><%= @program.contact_no %></span></div>
+	    </li>
+  	</ul>
 	</div>
 </div>
