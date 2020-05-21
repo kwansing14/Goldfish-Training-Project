@@ -1,17 +1,19 @@
-<%= form_with scope: :program, url: '/programs', local: true do |form| %>
+<div class='container'>
+	<div class='row'>
+		<h5 class='col'>Please select a program to enrol your goldfish into!</h5>
+	</div>
+	<div class='col s6'>
+		<%= form_with scope: :program, url: '/programs', local: true do |form| %>
+		  <%= form.collection_select :program_id, @programs, :id, :name, {}, {style: "display: block"} %>
+		</div>
+<br>
+		  <p>
+		    <%= form.submit :class => 'example_d'%>
+		  </p>
+		<% end %>
 
-  <%= form.collection_select :program_id, @programs, :id, :name, {}, {style: "display: block"} %>
-
-<!--   <p>
-    <%= form.label :user_id %><br>
-    <%= form.text_area :user_id %>
-  </p> -->
-
-  <p>
-    <%= form.submit %>
-  </p>
-
-  <p><%= current_user.id%></p>
-<% end %>
-
-<%= link_to 'Back', root_path %>
+<br>
+		<%= link_to 'Back', root_path %>
+</div>
+<br>
+<br>
