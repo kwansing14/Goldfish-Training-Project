@@ -1,22 +1,25 @@
-<%= form_with scope: :image, url: images_path, local: true do |form| %>
+<div class="container">
+	<%= form_with scope: :image, url: images_path, local: true do |form| %>
 
-	<h1>
-		Upload an image
-	</h1>
+		<h1>
+			Upload an image
+		</h1>
 
-  <div>
-	  <%= form.collection_select :program_id, @programs, :id, :name, {}, {style: "display: block"} %>
-	</div>
-  <div>
-  	<div>Image link</div>
-    <button type="button" id="upload_widget" class="cloudinary-button">Upload files</button>
-	  <%= form.text_area :image_url, :readonly => true, :id => "image-after-upload"%>
-  </div>
+	  <div>
+		  <%= form.collection_select :program_id, @programs, :id, :name, {}, {style: "display: block"} %>
+		</div>
+	  <div>
+	  	<div>Image link</div>
+	    <button type="button" id="upload_widget" class="cloudinary-button">Upload files</button>
+		  <%= form.text_area :image_url, :readonly => true, :id => "image_after_upload", :style => "visibility: hidden" %>
+	  </div>
 
-  <div>
-    <%= form.submit %>
-  </div>
-<% end %>
+	  <div>
+	    <%= form.submit :id => "submit_button", :style => "visibility: hidden", :class => "example_d2" %>
+	  </div>
+	<% end %>
+	<%= link_to 'Back', images_path, :class => "example_d2" %>
+</div>
 <script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
 <script type="text/javascript">
   var myWidget = cloudinary.createUploadWidget({
@@ -24,8 +27,10 @@
     uploadPreset: 'aheccwh1'}, (error, result) => {
       if (!error && result && result.event === "success") {
         myWidget.close();
-        document.getElementById("image-after-upload").innerHTML = result.info.url;
-        document.getElementById("upload_widget").style.visibility = "hidden";
+        document.getElementById("image_after_upload").innerHTML = result.info.url;
+        document.getElementById("upload_widget").style.display = "none";
+        document.getElementById("submit_button").style.visibility = "visible";
+        document.getElementById("image_after_upload").style.visibility = "visible";
       }
     }
   )

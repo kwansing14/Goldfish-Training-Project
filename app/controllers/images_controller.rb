@@ -4,6 +4,7 @@ class ImagesController < ApplicationController
   end
 
   def show
+    @images = Image.where(program_id: params[:program_id])
   end
 
   def new

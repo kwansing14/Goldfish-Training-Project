@@ -1,0 +1,36 @@
+<!-- code consists of unclosed div on first part for column rails manipulation purpose so alignment may look wrong -->
+<div class="container">
+		<br /><br />
+		<%= link_to 'Back', images_path, :class => "example_d2" %>
+		<br /><br />
+		<% @images.each_with_index do |image, index| %>
+			<% if index % 4 == 0 %>
+				<div class="row">
+					<div class="col s3">
+						<div class='card hoverable'>
+							<div class="card-image">
+								<%= image_tag image.image_url, :class => "materialboxed" %>
+				      </div>
+			      </div>
+			    </div>
+			<% elsif index % 4 == 3%>
+				<div class="col s3">
+					<div class='card hoverable'>
+						<div class="card-image">
+							<%= image_tag image.image_url, :class => "materialboxed" %>
+			      </div>
+		      </div>
+		    </div>
+		  </div>
+			<% else %>
+				<div class="col s3">
+					<div class='card hoverable'>
+						<div class="card-image">
+							<%= image_tag image.image_url, :class => "materialboxed" %>
+			      </div>
+		      </div>
+		    </div>
+		  <% end %>
+		<% end %>
+  </div>
+</div>

@@ -21,8 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
         element.setAttribute("style","margin:4px")
     })
 
-    let change3 = document.querySelector("example_d")
-    change3.setAttribute(href)
+    let elems3 = document.querySelectorAll('.materialboxed');
+    let instances3 = M.Materialbox.init(elems3);
+
 });
 
 
