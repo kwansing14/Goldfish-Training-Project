@@ -16,7 +16,13 @@ document.addEventListener('DOMContentLoaded', function() {
     let elems2 = document.querySelectorAll('.collapsible');
     let instances2 = M.Collapsible.init(elems2);
 
+    let change2 = document.querySelectorAll(".indicator-item");
+    change2.forEach((element) => {
+        element.setAttribute("style","margin:4px")
+    })
 });
+
+
 
 
 console.log("hello worlddddddddd")
