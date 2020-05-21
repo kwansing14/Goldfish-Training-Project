@@ -1,42 +1,51 @@
 <!-- code consists of unclosed div on first part for column rails manipulation purpose so alignment may look wrong -->
 <div class="container">
 	<% @programs.each_with_index do |program, index| %>
-		<% if program.image.first %>
-			<% if index % 2 == 0 %>
-				<div class="row">
-					<div class="tprogram row">
-						<div class="col s6">
-							<div class='card hoverable'>
-								<div class="card-image">
-									<%= link_to program_images_path(program) do %>
-										<%= image_tag program.image.first.image_url %>
-									<% end %>
-									<div class="row">
-						        <span class="innertext">
-						        	<%= program.name %>
-						        </span>
-						      </div>
-					      </div>
-				      </div>
-				    </div>
-			<% else %>
+		<% if index % 2 == 0 %>
+		<br /><br />
+			<div class="row">
 				<div class="col s6">
-						<div class='card hoverable'>
-							<div class="card-image">
+					<div class='card hoverable'>
+						<div class="card-image">
+							<% if program.image.first %>
 								<%= link_to program_images_path(program) do %>
 									<%= image_tag program.image.first.image_url %>
 								<% end %>
-								<div class="row">
-					        <span class="innertext">
-					        	<%= program.name %>
-					        </span>
-					      </div>
+							<% else %>
+								<%= link_to program_images_path(program) do %>
+									<%= image_tag 'https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg' %>
+								<% end %>
+							<% end %>
+							<div class="row">
+				        <span class="innertext">
+				        	<%= program.name %>
+				        </span>
 				      </div>
 			      </div>
-			    </div>
-			  </div>
+		      </div>
+		    </div>
+		<% else %>
+				<div class="col s6">
+					<div class='card hoverable'>
+						<div class="card-image">
+							<% if program.image.first %>
+								<%= link_to program_images_path(program) do %>
+									<%= image_tag program.image.first.image_url %>
+								<% end %>
+							<% else %>
+								<%= link_to program_images_path(program) do %>
+									<%= image_tag 'https://thumbs.dreamstime.com/b/no-image-available-icon-photo-camera-flat-vector-illustration-132483141.jpg' %>
+								<% end %>
+							<% end %>
+							<div class="row">
+				        <span class="innertext">
+				        	<%= program.name %>
+				        </span>
+				      </div>
+			      </div>
+		      </div>
+		    </div>
 			</div>
-			<% end %>
 		<% end %>
 	<% end %>
 </div>
