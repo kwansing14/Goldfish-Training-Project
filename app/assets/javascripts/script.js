@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
     change2.forEach((element) => {
         element.setAttribute("style","margin:4px")
     })
+
+    let elems3 = document.querySelectorAll('.materialboxed');
+    let instances3 = M.Materialbox.init(elems3);
 });
 
 
