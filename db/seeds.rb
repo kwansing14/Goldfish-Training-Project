@@ -8,19 +8,19 @@
 
 
 soccer = Program.create(:name => 'Soccer',
-  :duration => '2 days', :cost => 100, :contact_no => '12345678'
+  :duration => '2 days', :cost => 100, :contact_no => '12345678', :details => 'By choosing this training program, we will teach your goldfishies how to shoot the balls into the golds! You will get your Fishyano Goldnaldo!'
 )
 
 basketball = Program.create(:name => 'Basketball',
-  :duration => '3 days', :cost => 100, :contact_no => '12345678'
+  :duration => '3 days', :cost => 100, :contact_no => '12345678', :details => 'By choosing this training program, we will teach your goldfishies how to throw some hoops!'
 )
 
 rubgy = Program.create(:name => 'Rugby',
-  :duration => '5 days', :cost => 100, :contact_no => '12345678'
+  :duration => '5 days', :cost => 100, :contact_no => '12345678', :details => 'By choosing this training program, we will teach your goldfishies how to do some touchdowns!'
 )
 
 tricks = Program.create(:name => 'Tricks',
-  :duration => '14 days', :cost => 500, :contact_no => '12345678'
+  :duration => '14 days', :cost => 500, :contact_no => '12345678', :details => 'By choosing this training program, we will teach your your goldfishies to tunnel and a variety of impressive tricks! Be ready to be awe-ed by the Gold-Tricks! hehe'
 )
 
 enrolsoccer = Programs_User.create(:user_id => 1, :program_id => 1)
