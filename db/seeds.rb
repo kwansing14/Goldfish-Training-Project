@@ -23,6 +23,10 @@ tricks = Program.create(:name => 'Tricks',
   :duration => '14 days', :cost => 500, :contact_no => '12345678', :details => 'By choosing this training program, we will teach your your goldfishies to tunnel and a variety of impressive tricks! Be ready to be awe-ed by the Gold-Tricks! hehe'
 )
 
+adduser = User.create(:email => 'anyone@email.com', :encrypted_password => '$2a$11$A0SMQ0Vcobv/3gxnzKSfh.88p.1sy7oKHghPR55vcgs3AkEUCWs4W')
+
+adduser1 = User.create(:email => 'anytwo@email.com', :encrypted_password => '$2a$11$A0SMQ0Vcobv/3gxnzKSfh.88p.1sy7oKHghPR55vcgs3AkEUCWs4W')
+
 enrolsoccer = Programs_User.create(:user_id => 1, :program_id => 1)
 
 enrolbball = Programs_User.create(:user_id => 1, :program_id => 2)
