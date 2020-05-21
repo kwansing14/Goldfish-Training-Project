@@ -1,6 +1,6 @@
 <div class='container'>
 	<div class="row center" style="margin-top: 50px; width: 60%; max-height:210px">
-		  <div class="carousel carousel-slider">
+		  <div class="carousel carousel-slider" style="max-height:210px">
 		  	<% @images.each do |image| %>
 			    <a class="carousel-item">
 			    	<%= image_tag image.image_url , :class=>"showImg"%>
@@ -18,7 +18,7 @@
 	      <div class="collapsible-body"><span><%= @program.details %></span></div>
 	    </li>
 	    <li>
-	      <div class="collapsible-header"><i class="material-icons">timelapse</i>Duration of the coure</div>
+	      <div class="collapsible-header"><i class="material-icons">timelapse</i>Duration of the course</div>
 	      <div class="collapsible-body"><span><%= @program.duration %></span></div>
 	    </li>
 	    <li>
@@ -30,5 +30,10 @@
 	      <div class="collapsible-body"><span><%= @program.contact_no %></span></div>
 	    </li>
   	</ul>
+  	<div class="row button_cont" align="center">
+  		<a class="example_d3" href="new" rel="nofollow noopener" >
+  			<b>Click here to enroll this program</b>
+  		</a>
+		</div>
 	</div>
 </div>

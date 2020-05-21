@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 2020_05_21_064530) do
   create_table "programs", force: :cascade do |t|
     t.string "name"
     t.string "duration"
-    t.decimal "cost", precision: 10, scale: 2
+    t.integer "cost"
     t.integer "contact_no"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

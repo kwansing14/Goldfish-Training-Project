@@ -20,6 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
     change2.forEach((element) => {
         element.setAttribute("style","margin:4px")
     })
+
+    let change3 = document.querySelector("example_d")
+    change3.setAttribute(href)
 });
 
 
