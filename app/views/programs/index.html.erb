@@ -11,7 +11,7 @@
 			  		Click here to contact one of our trainers now!
 			  	</div>
 			    <div class="button_cont" align="center">
-		    		<a class="example_d" rel="nofollow noopener" >
+		    		<a href="mailto:goldfishtrainerds@generalassemb.ly" class="example_d" rel="nofollow noopener" >
 		    			<b>Click here</b>
 		    		</a>
 	    		</div>
@@ -20,28 +20,31 @@
 		    <a class="carousel-item" href="#one!"><img src="https://thumbs.dreamstime.com/b/goldfish-jumping-out-water-6843576.jpg"></a>
 		    <a class="carousel-item" href="#two!"><img src="https://i.pinimg.com/originals/9a/5d/10/9a5d106356b593e6968e3370fbf957fd.jpg"></a>
 		    <a class="carousel-item" href="#three!"><img src="https://www.davidsaquariumadvice.com/wp-content/uploads/2018/02/Goldfish-Aquarium-101-Everything-You-Need-to-Know-FI.jpg"></a>
+			</div>
 		</div>
 		<div class='row center white-text' style="background-color:#64B5F6; margin-top:15px; font-size: 30px; font-family:'ubuntu'">
 			List of Training Programs
 		</div>
 
-		<div class="row valign-wrapper">
+		<div class="row">
 			<!-- rows 1 of training program -->
-			<% @programs.each do |program| %>
+			<% @programs.each do |program, index| %>
 				<% if program.image.first %>
-					<div class="col s3">
-						<div class='card hoverable'>
-							<div class="card-image">
-								<%= link_to program_path(program) do %>
-								  <%= image_tag program.image.first.image_url %>
-								<% end %>
-								<!-- <img src="https://cdn.thisiswhyimbroke.com/images/goldfish-soccer-game-training-kit-640x533.jpg"></img> -->
-				        <span class="innertext">
-				        		<%= program.name %>
-				        </span>
-				      </div>
-				    </div>
-					</div>
+
+						<div class="col s6 m3">
+							<div class='card hoverable'>
+								<div class="card-image">
+									<%= link_to program_path(program) do %>
+									  <%= image_tag program.image.first.image_url %>
+									<% end %>
+									<!-- <img src="https://cdn.thisiswhyimbroke.com/images/goldfish-soccer-game-training-kit-640x533.jpg"></img> -->
+					        <span class="innertext" >
+					        		<%= program.name %>
+					        </span>
+					      </div>
+					    </div>
+						</div>
+
 				<% end %>
 			<% end %>
 		</div>
