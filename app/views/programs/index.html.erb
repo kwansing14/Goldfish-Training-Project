@@ -1,4 +1,5 @@
 <div class="container">
+
 	<!-- the mainbody -->
 		<!-- the training programs goes here -->
 		<div class="row">
@@ -30,21 +31,19 @@
 			<!-- rows 1 of training program -->
 			<% @programs.each do |program, index| %>
 				<% if program.image.first %>
-
-						<div class="col s6 m3">
-							<div class='card hoverable'>
-								<div class="card-image">
-									<%= link_to program_path(program) do %>
-									  <%= image_tag program.image.first.image_url %>
-									<% end %>
-									<!-- <img src="https://cdn.thisiswhyimbroke.com/images/goldfish-soccer-game-training-kit-640x533.jpg"></img> -->
-					        <span class="innertext" >
-					        		<%= program.name %>
-					        </span>
-					      </div>
-					    </div>
-						</div>
-
+					<div class="col s6 m3">
+						<div class='card hoverable'>
+							<div class="card-image">
+								<%= link_to program_path(program) do %>
+								  <%= image_tag program.image.first.image_url %>
+								<% end %>
+								<!-- <img src="https://cdn.thisiswhyimbroke.com/images/goldfish-soccer-game-training-kit-640x533.jpg"></img> -->
+				        <span class="innertext" >
+				        		<%= program.name %>
+				        </span>
+				      </div>
+				    </div>
+					</div>
 				<% end %>
 			<% end %>
 		</div>

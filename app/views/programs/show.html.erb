@@ -1,11 +1,13 @@
 <div class='container'>
-	<div class="row center" style="margin-top: 50px; width: 60%; max-height:210px">
-		  <div class="carousel carousel-slider" style="max-height:210px">
-		  	<% @images.each do |image| %>
-			    <a class="carousel-item">
-			    	<%= image_tag image.image_url , :class=>"showImg"%>
-			    </a>
-		    <% end %>
+	<div class='row' style="border:2px solid red; margin-top: 50px;">
+		<div class="col s12 center" style="border:2px solid green; max-height:210px">
+			  <div class="carousel carousel-slider" style="border:2px solid black; max-height:210px">
+			  	<% @images.each do |image| %>
+				    <a class="carousel-item">
+				    	<%= image_tag image.image_url , :class=>"showImg"%>
+				    </a>
+			    <% end %>
+			</div>
 		</div>
 	</div>
 	<div class='row center white-text' style="background-color:#64B5F6; margin-top:15px; font-size: 30px; font-family:'ubuntu'">
@@ -31,9 +33,29 @@
 	    </li>
   	</ul>
   	<div class="row button_cont" align="center">
-  		<a class="example_d3" href="new" rel="nofollow noopener" >
+  		<a class="example_d3 modal-trigger" href="#modal1" rel="nofollow noopener" >
   			<b>Click here to enroll this program</b>
   		</a>
 		</div>
 	</div>
+</div>
+
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+  <div class="modal-content">
+
+  	<!-- This is the bullshitting part -->
+    <h4>Terms and Conditions</h4>
+    <p>1. TERMS OF AGREEMENT</p>
+    <p>Together with these terms and condition, and the boring stuff continues, blah blah blah, i bet you aren't reading this, if you are really reading this, you don't really need to bother, like for rela, just click agree like you always do, and get over it, is okay, so i guess that's it, unless you decided to be a piece of snowlake and continues to read this part of the agreement, i'm just kidding i'm just trying to write a bunch of text to make this modal looks nice, okay now you can click the agree button for real, like seriously just click it.</p>
+    <p>2. OBLIGATION OF TRAINING PROVIDER</p>
+    <p>I don't even know how to write this part of the agreement, but here it goes, trainers who agrees to provide training are allowed to train the goldfish in their own systematical ways. As training provider we have no control of the outcome of your goldfish, as the results of training will be totally based on how intelligent your goldfish is.</p>
+    <p>3. CANCELLATION OF A COURSE</p>
+    <p>Note that there is no cancellation of the course, once you have signed up, unless your goldfish died before or during the course. However, note that there will be no refund under any circumstances. Everyone is just trying to put food on the table man, stop taking back the money you gave us.</p>
+
+  </div>
+  <div class="modal-footer">
+  	<a class="modal-close waves-effect waves-green btn-flat">Disagree</a>
+    <a href="new" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+  </div>
 </div>
