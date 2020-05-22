@@ -1,0 +1,19 @@
+<h1>Pins#new</h1>
+<p>Find me in app/views/pins/new.html.erb</p>
+
+<%= form_with scope: :fishstagram, url: fishtagrams_path, local: true do |form| %>
+
+  <p>
+  	Title of your fishstagram:<br>
+    <%= form.text_area :title %>
+  </p>
+
+  <p>
+  	Image Url:<br>
+    <%= form.text_area :imgurl %>
+  </p>
+
+  <p>
+    <%= form.submit %>
+  </p>
+<% end %>
