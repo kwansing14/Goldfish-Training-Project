@@ -37,6 +37,12 @@
   			<b>Click here to enroll this program</b>
   		</a>
 		</div>
+		<div>
+			<%= form_for @program, method: :post, url: programs_path do |form| %>
+				<%= form.hidden_field "program_id", :value => @program.id %>
+				<%= form.submit %>
+			<% end %>
+		</div>
 	</div>
 </div>
 
@@ -56,9 +62,6 @@
   </div>
   <div class="modal-footer">
   	<a class="modal-close waves-effect waves-green btn-flat">Disagree</a>
-  	<%= form_with scope: :program, url: programs_path, @program, method: "post", local: true do |form| %>
-  		<%= form.submit :class=>"modal-close waves-effect waves-green btn-flat", :value=>"Agree2" %>
-  	<% end %>
     <a href="new" class="modal-close waves-effect waves-green btn-flat">Agree</a>
   </div>
 </div>
