@@ -17,31 +17,59 @@
   	<nav>
 	    <div class="nav-wrapper">
 	    	<div class="row">
-	    		<div class="col s4 offset-s4 center">
+	    		<div class="col s4 l4 offset-s4 offset-l4 center">
 			      <div>
 			      	<%= link_to root_path do %>
 			      		<%= image_tag 'goldfish3.jpeg', :class=>"logo" %>
 			      	<% end %>
 			      </div>
 			    </div>
-<!-- 			    <div class="col s4 center">
-		     		<%= link_to 'Goldfish training', root_path %>
-		     	</div> -->
-		     	<div class="col s4">
+		     	<div class="col s4 l4">
 		      	<!-- user log in -->
 			      <ul>
-			      	<% if user_signed_in? %>
-				        <li class="right"><%= link_to 'log out', destroy_user_session_url, method: :delete %></li>
-				        <% else %>
-								<li class="right"><%= link_to 'log in', new_user_session_url %></li>
-							<% end %>
+			      	<li class="right"><a href="#" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons" style="color:white">menu</i></a></li>
 			      </ul>
 			      <!-- End of user log in -->
 			    </div>
 			  </div>
 	    </div>
 	  </nav>
+	  <!-- MAIN -->
     <%= yield %>
+    <!-- Side Nav stuff -->
+    <div>
+    	<ul id="slide-out" class="sidenav">
+		    <li><div class="user-view">
+		      <div class="background">
+		        <img src="images/office.jpg">
+		      </div>
+		      <a href="#user"><%= image_tag 'goldfish3.jpeg', :class=>"logo" %></a>
+		      <a href="#name"><span class="white-text name">John Doe</span></a>
+		      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
+		    </div></li>
+
+		    <!-- login/logout -->
+		    <% if user_signed_in? %>
+		    	<!-- first subheader -->
+		    	<li><div class="divider"></div></li>
+			    <li><a class="subheader">Welcome !</a></li>
+		      <li class="col s6 offset-s6">
+		        <%= link_to 'Log out', destroy_user_session_url, method: :delete %>
+		      </li>
+		    <% else %>
+			    <!-- first subheader -->
+			    <li><div class="divider"></div></li>
+			    <li><a class="subheader">Login/sign up</a></li>
+					<li><%= link_to 'Log in', new_user_session_url %></li>
+					<li><%= link_to "Sign up", new_user_registration_path %></li>
+				<% end %>
+				<li><div class="divider"></div></li>
+		    <li><a class="subheader">Progams: </a></li>
+		    <!-- Third link -->
+		    <li><a class="waves-effect" href="#!">1st program status</a></li>
+		  </ul>
+    </div>
+    <!-- FOOTER -->
   <footer class="page-footer" style="padding:0">
       <div class="row" style="margin:0" >
         <div class="col l5 offset-l1 s12 center">
@@ -65,6 +93,7 @@
     <div class="footer-copyright" style="min-height:16px">
       <div style="margin:0 20px; font-size: 11px">© 2020 Copyright</div>
     </div>
+
   </footer>
   </body>
 </html>

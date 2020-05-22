@@ -37,9 +37,9 @@ class ProgramsController < ApplicationController
   end
 
   def create
-
     @program = Programs_User.new(programs_user_params)
     @program.user = current_user
+    byebug
 
     if @program.save
     redirect_to programs_url
