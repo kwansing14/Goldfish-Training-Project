@@ -56,6 +56,9 @@
   </div>
   <div class="modal-footer">
   	<a class="modal-close waves-effect waves-green btn-flat">Disagree</a>
+  	<%= form_with scope: :program, url: programs_path, @program, method: "post", local: true do |form| %>
+  		<%= form.submit :class=>"modal-close waves-effect waves-green btn-flat", :value=>"Agree2" %>
+  	<% end %>
     <a href="new" class="modal-close waves-effect waves-green btn-flat">Agree</a>
   </div>
 </div>

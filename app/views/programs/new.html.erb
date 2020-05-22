@@ -5,12 +5,12 @@
 	<div class='col s6'>
 		<%= form_with scope: :program, url: '/programs', local: true do |form| %>
 		  <%= form.collection_select :program_id, @programs, :id, :name, {}, {style: "display: block"} %>
-		</div>
-<br>
-		  <p>
-		    <%= form.submit :class => 'example_d2'%>
-		  </p>
-		<% end %>
+	</div>
+	<br>
+	  <p>
+	    <%= form.submit :class => 'example_d2'%>
+	  </p>
+	<% end %>
 
 <br>
 		<%= link_to 'Back', root_path %>
