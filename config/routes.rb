@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :images
   get '/programs/:program_id/images' => 'images#show', as: 'program_images'
   root 'programs#index'
-
+  resources :fishtagrams do
+    resources :comments
+  end
 end
