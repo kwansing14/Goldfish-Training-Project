@@ -38,10 +38,7 @@
   		</a>
 		</div>
 		<div>
-			<%= form_for @program, method: :post, url: programs_path do |form| %>
-				<%= form.hidden_field "program_id", :value => @program.id %>
-				<%= form.submit %>
-			<% end %>
+
 		</div>
 	</div>
 </div>
@@ -61,7 +58,11 @@
 
   </div>
   <div class="modal-footer">
+  	<%= form_for @program, method: :post, url: programs_path do |form| %>
   	<a class="modal-close waves-effect waves-green btn-flat">Disagree</a>
-    <a href="new" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+			<%= form.hidden_field "program_id", :value => @program.id %>
+			<%= form.submit :class=>"modal-close waves-effect waves-green btn-flat", :value => "Agree" %>
+		<% end %>
+    <!-- <a href="new" class="modal-close waves-effect waves-green btn-flat">Agree</a> -->
   </div>
 </div>
