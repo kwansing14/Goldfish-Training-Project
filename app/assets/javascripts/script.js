@@ -1,4 +1,4 @@
- console.log("hello world")
+console.log("hello world")
 
 document.addEventListener('DOMContentLoaded', function() {
 
@@ -24,9 +24,22 @@ document.addEventListener('DOMContentLoaded', function() {
     let elems3 = document.querySelectorAll('.materialboxed');
     let instances3 = M.Materialbox.init(elems3);
 
+    var elems4 = document.querySelectorAll('.modal');
+    var instances4 = M.Modal.init(elems4);
+
+    // const sideNav = new Sidenav(document.querySelector('.sidenav.sidenav-fixed'));
+    // window.addEventListener('resize', (e) => {
+    //     if (sideNav.isOpen) {
+    //         sideNav.close();
+    //         sideNav.open();
+    //     }
+    // });
+
+    var elems5 = document.querySelectorAll('.sidenav');
+    var instances = M.Sidenav.init(elems5);
+
+
+
 });
 
-
-
-
-console.log("hello worlddddddddd")
+console.log("hello end of the worlddddddddd")
