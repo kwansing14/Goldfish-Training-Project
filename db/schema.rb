@@ -10,10 +10,44 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_05_21_064530) do
+ActiveRecord::Schema.define(version: 2020_05_22_083045) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bubbles", force: :cascade do |t|
+    t.text "body"
+    t.string "title"
+    t.string "img_url"
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_bubbles_on_user_id"
+  end
+
+  create_table "comments", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "bubble_id"
+    t.string "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["bubble_id"], name: "index_comments_on_bubble_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "follows", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "following_user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_follows_on_user_id"
+  end
+
+  create_table "goldfishes", force: :cascade do |t|
+    t.bigint "user_id"
+    t.text "name"
+    t.index ["user_id"], name: "index_goldfishes_on_user_id"
+  end
 
   create_table "images", force: :cascade do |t|
     t.bigint "program_id"
