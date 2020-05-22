@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
   has_many :programs
   has_many :programs_users
+  has_many :bubbles
+  has_many :goldfishes
 end
