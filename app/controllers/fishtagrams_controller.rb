@@ -11,6 +11,7 @@ class FishtagramsController < ApplicationController
   def create
     @bubble = Bubble.new(fishtagram_params)
     @bubble.user = current_user
+    @bubble.body = @bubble.body.gsub(/(?:\n\r?|\r\n?)/, '<br>')
 
     if @bubble.save
     redirect_to root_path
