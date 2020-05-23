@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   def show
     @fishtagram = Fishtagram.find(params[:pin_id])
   end
@@ -46,5 +45,6 @@ class CommentsController < ApplicationController
   private
   def comment_params
     params.require(:comment).permit(:body)
+>>>>>>> 762e8a7a25dcf1b52a413875e77deeb633655aa8
   end
 end

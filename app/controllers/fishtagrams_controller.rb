@@ -1,11 +1,11 @@
 class FishtagramsController < ApplicationController
   def show
-    @fishstagram = Fishtagram.find(params[:id])
+    @fishtagram = Fishtagram.find(params[:id])
     @comments = Comment.where(pin_id: (params[:id]))
   end
 
   def edit
-    @fishstagram = Fishtagram.find(params[:id])
+    @fishtagram = Fishtagram.find(params[:id])
   end
 
   def index
@@ -13,20 +13,35 @@ class FishtagramsController < ApplicationController
   end
 
   def update
-    @fishstagram = Fishtagram.find(params[:id])
-    @fishstagram.update(pin_params)
-    redirect_to @fishstagram
+    @fishtagram = Fishtagram.find(params[:id])
+    @fishtagram.update(pin_params)
+    redirect_to @fishtagram
   end
 
   def destroy
-    @fishstagram = Fishtagram.find(params[:id])
-    @fishstagram.destroy
+    @fishtagram = Fishtagram.find(params[:id])
+    @fishtagram.destroy
 
     redirect_to root_path
   end
 
+  def new
+  end
+
+  def create
+    @fishtagram = Fishtagram.new(fishtagram_params)
+    @fishtagram.user = current_user
+    @fishtagram.body = @fishtagram.body.gsub(/(?:\n\r?|\r\n?)/, '<br>')
+
+    if @fishtagram.save
+    redirect_to fishtagrams_path
+    else
+      render 'new'
+    end
+  end
+
   private
   def fishtagram_params
-    params.require(:fishstagram).permit(:title, :imgurl)
+    params.require(:fishtagram).permit(:body, :title, :img_url)
   end
 end

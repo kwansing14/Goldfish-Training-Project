@@ -1,0 +1,48 @@
+<div class="container">
+	<%= form_with scope: :fishtagram, url: fishtagrams_path, local: true do |form| %>
+
+		<h1>
+			Post a bubble!
+		</h1>
+
+		<div>
+			<%= form.label :title %><br>
+	    <%= form.text_field :title %>
+		</div>
+
+		<div>
+			<%= form.label :body %><br>
+	    <%= form.text_area :body, :style => "height: 12rem" %>
+		</div>
+
+	  <div>
+	  	<div>Image link</div>
+	    <button type="button" id="upload_widget" class="cloudinary-button">Upload files</button>
+		  <%= form.text_area :img_url, :readonly => true, :id => "image_after_upload", :style => "visibility: hidden" %>
+	  </div>
+
+	  <div>
+	    <%= form.submit :id => "submit_button", :style => "visibility: hidden", :class => "example_d2" %>
+	  </div>
+	<% end %>
+	<%= link_to 'Back', fishtagrams_path, :class => "example_d2" %>
+</div>
+<script src="https://widget.cloudinary.com/v2.0/global/all.js" type="text/javascript"></script>
+<script type="text/javascript">
+  var myWidget = cloudinary.createUploadWidget({
+    cloudName: 'travisenquiry',
+    uploadPreset: 'aheccwh1'}, (error, result) => {
+      if (!error && result && result.event === "success") {
+        myWidget.close();
+        document.getElementById("image_after_upload").innerHTML = result.info.url;
+        document.getElementById("upload_widget").style.display = "none";
+        document.getElementById("submit_button").style.visibility = "visible";
+        document.getElementById("image_after_upload").style.visibility = "visible";
+      }
+    }
+  )
+
+  document.getElementById("upload_widget").addEventListener("click", function(){
+      myWidget.open();
+    }, false);
+</script>
