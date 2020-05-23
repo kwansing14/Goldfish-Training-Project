@@ -17,7 +17,6 @@ class FishtagramsController < ApplicationController
   end
 
   def update
-<<<<<<< HEAD
     @fishtagram = Fishtagram.find(params[:id])
     @fishtagram.update(pin_params)
     redirect_to @fishtagram
@@ -26,16 +25,6 @@ class FishtagramsController < ApplicationController
   def destroy
     @fishtagram = Fishtagram.find(params[:id])
     @fishtagram.destroy
-=======
-    @fishstagram = Fishtagram.find(params[:id])
-    @fishstagram.update(pin_params)
-    redirect_to @fishstagram
-  end
-
-  def destroy
-    @fishstagram = Fishtagram.find(params[:id])
-    @fishstagram.destroy
->>>>>>> aa48543dd475e8987ff978f26f3b7e95b255eacb
 
     redirect_to root_path
   end
