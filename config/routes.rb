@@ -9,5 +9,5 @@ Rails.application.routes.draw do
     resources :comments
   end
 
-  get '/users/:user_id/bubbles' => 'profiles#show', as: 'user_bubbles'
+  get '/users/:user_id/fishtagrams' => 'profiles#show', as: 'user_fishtagrams'
 end

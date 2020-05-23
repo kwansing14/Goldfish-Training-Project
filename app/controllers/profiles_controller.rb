@@ -6,7 +6,7 @@ class ProfilesController < ApplicationController
   end
 
   def show
-    @bubble = Bubble.where(user_id: params[:user_id])
+    @fishtagram = Fishtagram.where(user_id: params[:user_id])
     @fish = Goldfish.where(user_id: params[:user_id])
     @follow = Follow.where(user_id: params[:user_id])
   end
