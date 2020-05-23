@@ -7,4 +7,5 @@ class User < ApplicationRecord
   has_many :programs_users
   has_many :bubbles
   has_many :goldfishes
+  has_many :follows
 end

@@ -34,3 +34,20 @@ enrolbball = Programs_User.create(:user_id => 1, :program_id => 2)
 enroltricks = Programs_User.create(:user_id => 1, :program_id => 2)
 
 enroltricks2 = Programs_User.create(:user_id => 2, :program_id => 2)
+
+gf1 = Goldfish.create(:user_id => 1, :name => 'Buttercup')
+gf2 = Goldfish.create(:user_id => 1, :name => 'Blossom')
+gf3 = Goldfish.create(:user_id => 1, :name => 'Bubbles')
+
+gf4 = Goldfish.create(:user_id => 2, :name => 'Fishyano Goldnaldo')
+gf5 = Goldfish.create(:user_id => 2, :name => 'Fichael Golden')
+gf6 = Goldfish.create(:user_id => 2, :name => 'Gonny Fishkinson')
+
+bubble1 = Fishtagram.create(:body => 'Hi Guys, thanks for all the support. I would like to share with you guys my training tips for my Powerpuff Girls! 1) you need to add in some sugar. 2) you need to add in some spices 3) you need to add in everything that is nice!', :title => 'Hi Guys, we are the Powerpuff girls!', :user_id => 1)
+bubble2 = Fishtagram.create(:body => 'Thanks for all your support, the girls are doing great right now. I am starting to train them on the training program of Soccer. Hopefully, we can get the girls to start playing soccer together!', :title => 'Excited!!!',:user_id => 1)
+bubble3 = Fishtagram.create(:body => 'Hi everyone! This are to show my boys! they are the Golden trio! 1) boy in all gold is Fishyano Goldnaldo. 2) the boy with the strong arms is Fichael Golden and, last but not least; 3) the boy in roses - Gonny Fishkinson', :title => 'The Golden trio!!!',:user_id => 2)
+bubble4 = Fishtagram.create(:body => 'Yay! Me TOO! i am training my boys to play soccer as well! we can have them play against each other!', :title => 'The Golden trio!!!',:user_id => 2)
+commentbub1 = Comment.create(:user_id => 2, :Fishtagram => 1, :body => 'YES!! We should have them play together!')
+commentbub2 = Comment.create(:user_id => 1, :Fishtagram => 3, :body => 'Hi boys, love the names that you have!!')
+follow1 = Follow.create(:user_id => 1, :following_user_id => 2)
+follow2 = Follow.create(:user_id => 2, :following_user_id => 1)
