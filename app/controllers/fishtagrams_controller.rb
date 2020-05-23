@@ -1,10 +1,6 @@
 class FishtagramsController < ApplicationController
   def show
-<<<<<<< HEAD
     @fishtagram = Fishtagram.find(params[:id])
-=======
-    @fishstagram = Fishtagram.find(params[:id])
->>>>>>> aa48543dd475e8987ff978f26f3b7e95b255eacb
     @comments = Comment.where(pin_id: (params[:id]))
   end
 
