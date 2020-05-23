@@ -1,26 +1,26 @@
 class FishtagramsController < ApplicationController
   def show
-    @fishstagram = Fishstagram.find(params[:id])
+    @fishtagram = Fishtagram.find(params[:id])
     @comments = Comment.where(pin_id: (params[:id]))
   end
 
   def edit
-    @fishstagram = Fishstagram.find(params[:id])
+    @fishtagram = Fishtagram.find(params[:id])
   end
 
   def index
-    @fishtagrams = Fishstagram.all
+    @fishtagrams = Fishtagram.all
   end
 
   def update
-    @fishstagram = Fishstagram.find(params[:id])
-    @fishstagram.update(pin_params)
-    redirect_to @fishstagram
+    @fishtagram = Fishtagram.find(params[:id])
+    @fishtagram.update(pin_params)
+    redirect_to @fishtagram
   end
 
   def destroy
-    @fishstagram = Fishstagram.find(params[:id])
-    @fishstagram.destroy
+    @fishtagram = Fishtagram.find(params[:id])
+    @fishtagram.destroy
 
     redirect_to root_path
   end
