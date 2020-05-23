@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   resources :fishtagrams do
     resources :comments
   end
+
   get '/users/:user_id/fishtagrams' => 'profiles#show', as: 'user_fishtagrams'
 end
