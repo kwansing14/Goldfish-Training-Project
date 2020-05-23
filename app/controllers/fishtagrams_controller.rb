@@ -1,7 +1,7 @@
 class FishtagramsController < ApplicationController
   def show
     @fishtagram = Fishtagram.find(params[:id])
-    @comments = Comment.where(pin_id: (params[:id]))
+    @comments = Comment.where(fishtagram_id: (params[:id]))
   end
 
   def edit
@@ -14,7 +14,7 @@ class FishtagramsController < ApplicationController
 
   def update
     @fishtagram = Fishtagram.find(params[:id])
-    @fishtagram.update(pin_params)
+    @fishtagram.update(fishtagram_params)
     redirect_to @fishtagram
   end
 
