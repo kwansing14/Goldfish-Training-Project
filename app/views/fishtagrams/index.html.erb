@@ -1,0 +1,36 @@
+<body class="teal lighten-2">
+	<nav>
+    <div class="nav-wrapper">
+      <a href="#" class="brand-logo" style="margin-left: 30px">Pinspiration</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+      	<% if user_signed_in? %>
+        <li stlye="margin-right:30px"><%= link_to 'log out', destroy_user_session_url, method: :delete %></li>
+        <% else %>
+				<li ><%= link_to 'log in', new_user_session_url %></li>
+				<% end %>
+      </ul>
+    </div>
+  </nav>
+	<div class="container" style='display:flex;flex-wrap:wrap; margin-top:30px'>
+			<% @fishtagrams.each do |fishtagram| %>
+		    	<div class="cards-container" style="width:30%; padding:0px; margin: 0 10px">
+			      <div class="card hoverable">
+			        <div class="card-image">
+			          <img src=<%= fishtagram.img_url %>>
+			        </div>
+			        <div class="card-content">
+			          <p><%= fishtagram.title %></p>
+			        </div>
+			        <div class="card-action" style="display:block">
+			          <div class="csedbtn btn-small"><%= link_to 'Comment', new_fishtagram_comment_path(fishtagram) %></div>
+			          <div class="csedbtn btn-small"><%= link_to 'Show', fishtagram_path(fishtagram) %></div>
+			          <div class="csedbtn btn-small"><%= link_to 'Edit', edit_fishtagram_path(fishtagram) %></div>
+			          <div class="csedbtn btn-small"><%= link_to 'Destroy', fishtagram_path(fishtagram),
+	        method: :delete,
+	        data: { confirm: 'Are you sure?' } %></div>
+			        </div>
+			      </div>
+		    	</div>
+	    <% end %>
+  </div>
+</body>
