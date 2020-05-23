@@ -8,4 +8,6 @@ Rails.application.routes.draw do
   resources :fishtagrams do
     resources :comments
   end
+
+  get '/users/:user_id/bubbles' => 'users#show', as: 'user_bubbles'
 end
