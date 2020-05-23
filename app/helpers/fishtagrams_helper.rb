@@ -1,0 +1,2 @@
+module FishtagramsHelper
+end
