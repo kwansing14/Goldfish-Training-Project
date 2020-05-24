@@ -14,8 +14,8 @@ class CommentsController < ApplicationController
     @fishtagram = Fishtagram.find(params[:fishtagram_id])
     @comment = Comment.new(comment_params)
     @comment.user = current_user
-    @comment.Fishtagram = @fishtagram
-
+    @comment.fishtagram_id = @fishtagram.id
+    byebug
     if @comment.save
       redirect_to fishtagram_path(@fishtagram)
     else
