@@ -28,4 +28,8 @@
 		<% @follow.each do |follow| %>
 			<p><%=follow.user.email%></p>
 		<% end %>
+		<h4>Who is following me!!</h4>
+			<% @following.each do |following| %>
+				<p><%=following.user.email%></p>
+			<% end %>
 </div>

@@ -9,6 +9,7 @@ class ProfilesController < ApplicationController
     @fishtagram = Fishtagram.where(user_id: params[:user_id])
     @fish = Goldfish.where(user_id: params[:user_id])
     @follow = Follow.where(user_id: params[:user_id])
+    @following = Follow.where(following_user_id: params[:user_id])
   end
 
   def new
