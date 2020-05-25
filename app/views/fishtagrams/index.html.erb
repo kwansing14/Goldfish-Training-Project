@@ -25,10 +25,16 @@
 	          <p class='truncate'><%= fishtagram.title %></p>
 	        </div>
 	        <div class="card-action">
-	          <%= link_to 'Comment', new_fishtagram_comment_path(fishtagram) ,:class=> 'cardbtn' %>
+	        	<% if current_user %>
+		          <%= link_to 'Comment', new_fishtagram_comment_path(fishtagram) ,:class=> 'cardbtn' %>
+		         <% end %>
 	          <%= link_to 'View', fishtagram_path(fishtagram) ,:class=> 'cardbtn' %>
-	          <%= link_to 'Edit', edit_fishtagram_path(fishtagram) ,:class=> 'cardbtn'%>
-	          <%= link_to 'Delete', fishtagram_path(fishtagram),:class=> 'cardbtn' , method: :delete, data: { confirm: 'Are you sure?' } %>
+	          <% if current_user %>
+		          <% if fishtagram.user_id == current_user.id %>
+			          <%= link_to 'Edit', edit_fishtagram_path(fishtagram) ,:class=> 'cardbtn'%>
+			          <%= link_to 'Delete', fishtagram_path(fishtagram),:class=> 'cardbtn' , method: :delete, data: { confirm: 'Are you sure?' } %>
+			        <% end %>
+		        <% end %>
 	        </div>
 	      </div>
 	  	</div>

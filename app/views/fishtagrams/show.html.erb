@@ -14,17 +14,23 @@
         	<% @comments.each do |comment| %>
         		<div class="row" style="padding:10px; margin-bottom: 15px">
 				      <div class="col" style="2px solid black"><span><%= comment.body %></span></div>
-				      <div class="col right"><span><%= link_to 'Destroy', fishtagram_comment_path(comment),
-				        method: :delete,
-				        data: { confirm: 'Are you sure?' } %></span></div>
-				      <div class="col right"><span><%= link_to 'Edit', edit_fishtagram_comment_path(comment) %></span></div>
+				      <% if current_user %>
+					      <% if comment.user_id == current_user.id %>
+						      <div class="col right"><span><%= link_to 'Destroy', fishtagram_comment_path(comment),
+						        method: :delete,
+						        data: { confirm: 'Are you sure?' } %></span></div>
+						      <div class="col right"><span><%= link_to 'Edit', edit_fishtagram_comment_path(comment) %></span></div>
+						    <% end %>
+					    <% end %>
 						</div>
 					<% end %>
 					<div class='divider'>
 					</div>
 					<div class='section'>
 						<%= link_to 'Home page', fishtagrams_path %>
-						<%= link_to 'Comment', new_fishtagram_comment_path(@fishtagram.id) ,:class=> 'cardbtn' %>
+						<% if current_user %>
+							<%= link_to 'Comment', new_fishtagram_comment_path(@fishtagram.id) ,:class=> 'cardbtn' %>
+						<% end %>
 					</div>
         </div>
       </div>
