@@ -40,6 +40,11 @@ class FishtagramsController < ApplicationController
     end
   end
 
+  def index_sort
+    @fishtagrams = Fishtagram.where(user_id: current_user.id)
+    render 'index'
+  end
+
   private
   def fishtagram_params
     params.require(:fishtagram).permit(:body, :title, :img_url)

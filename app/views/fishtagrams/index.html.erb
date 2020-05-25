@@ -3,9 +3,9 @@
 	</div>
 	<div class='row white-text z-depth-2' style="background-color:#64B5F6; margin-top:15px; font-family:'ubuntu';">
 		<div class='col s4 valign-wrapper' style='height:60px' >
-		<%= form_with url: fishtagrams_path, method: :get do |form| %>
-			<%= form.select :sort, options_for_select([['All'], ['My Fishtagrams']]) %>
-		<% end %>
+			<% if current_user %>
+				<%= link_to 'My Fishtagrams', fishtagram_sort_path, :style=>'color:#fff'%>
+			<% end %>
 		</div>
 		<div class='col s4 valign-wrapper'  style='font-size: 20px; height:60px; color:#000'>
 			<span class='center-block' style='border: 2px solid black; padding:2px 8px; border-radius: 5px'>Fishtagrams</span>
