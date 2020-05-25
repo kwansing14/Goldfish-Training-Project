@@ -23,6 +23,15 @@ body {
 	font-size: 10px;
 }
 
+.fishicon{
+	color: rgba(0,0,0,0.1);
+	transition: all 0.5s ease 0s;
+}
+
+.fishicon:hover{
+	color: rgb(100,181,246);
+}
+
 .card-content {
 	overflow: hidden;
 	&:hover {

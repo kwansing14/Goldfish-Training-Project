@@ -14,17 +14,24 @@
         	<% @comments.each do |comment| %>
         		<div class="row" style="padding:10px; margin-bottom: 15px">
 				      <div class="col" style="2px solid black"><span><%= comment.body %></span></div>
-				      <div class="col right"><span><%= link_to 'Destroy', fishtagram_comment_path(comment),
-				        method: :delete,
-				        data: { confirm: 'Are you sure?' } %></span></div>
+				      <div class="col right">
+					      <a class="waves-effect waves-light btn-small right"data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="<%=fishtagram_comment_path(comment)%>">
+					       	Delete
+					      </a>
+					      <a class="waves-effect waves-light btn-small right" href="<%=edit_fishtagram_comment_path(comment) %>"><i class="material-icons right">home</i>Home</a>
+				      </div>
 				      <div class="col right"><span><%= link_to 'Edit', edit_fishtagram_comment_path(comment) %></span></div>
 						</div>
 					<% end %>
 					<div class='divider'>
 					</div>
 					<div class='section'>
-						<a class="waves-effect waves-light btn-small right" href="<%=root_path%>"><i class="material-icons right">home</i>Home</a>
+
 						<a class="waves-effect waves-light btn-small" href="<%=new_fishtagram_comment_path(@fishtagram.id)%>"><i class="material-icons right">create</i>Comment</a>
+
+						<a class="waves-effect waves-light btn-small right" href="<%=root_path%>"><i class="material-icons right">home</i>Home</a>
+						<a class="waves-effect waves-light btn-small right" style="margin-right:10px" href="<%=fishtagrams_path%>"><i class="material-icons right">create</i>Back</a>
+
 					</div>
         </div>
       </div>
