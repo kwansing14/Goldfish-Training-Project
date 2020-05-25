@@ -7,7 +7,6 @@ class CommentsController < ApplicationController
   end
 
   def new
-    byebug
     @fishtagram = Fishtagram.find(params[:fishtagram_id])
     @comments = Comment.where(fishtagram_id: (params[:fishtagram_id]))
   end

@@ -23,8 +23,8 @@
 					<div class='divider'>
 					</div>
 					<div class='section'>
-						<%= link_to 'Home page', fishtagrams_path %>
-						<%= link_to 'Comment', new_fishtagram_comment_path(@fishtagram.id) ,:class=> 'cardbtn' %>
+						<a class="waves-effect waves-light btn-small right" href="<%=root_path%>"><i class="material-icons right">home</i>Home</a>
+						<a class="waves-effect waves-light btn-small" href="<%=new_fishtagram_comment_path(@fishtagram.id)%>"><i class="material-icons right">create</i>Comment</a>
 					</div>
         </div>
       </div>

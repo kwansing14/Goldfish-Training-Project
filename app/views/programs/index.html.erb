@@ -40,7 +40,6 @@
 							<%= link_to program_path(program) do%>
 							  <%= image_tag program.image.first.image_url, :style=>"max-height: 144px; max-width:195px" %>
 							<% end %>
-							<!-- <img src="https://cdn.thisiswhyimbroke.com/images/goldfish-soccer-game-training-kit-640x533.jpg"></img> -->
 			        <span class="innertext" >
 			        	<%= program.name %>
 			        </span>
@@ -72,7 +71,8 @@
 			</div>
 			<div class='section center'>
 				<div class='btnline3'>
-					<%= link_to 'Click here to check out Fishtagrams', fishtagrams_path %>
+					<a class="waves-effect waves-light btn-small" href="<%=fishtagrams_path%>"><i class="material-icons right">forum</i>Click here to checkout Fishtagram</a>
+
 				</div>
 			</div>
 		</div>
