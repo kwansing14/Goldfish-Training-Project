@@ -9,10 +9,12 @@ document.addEventListener('DOMContentLoaded', function() {
         indicators: true
     });
 
-    setInterval(()=>{
-        M.Carousel.getInstance(elems[0]).next();
-    },5000);
-
+    if (elems.length > 0) {
+        console.log()
+        setInterval(()=>{
+            M.Carousel.getInstance(elems[0]).next();
+        },5000);
+    }
     let elems2 = document.querySelectorAll('.collapsible');
     let instances2 = M.Collapsible.init(elems2);
 
