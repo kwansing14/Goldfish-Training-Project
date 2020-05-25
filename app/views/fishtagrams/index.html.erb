@@ -21,7 +21,16 @@
 		      <div class="card hoverable" style="height:333px; max-height:333px">
 		        <div class="card-image" style="height:300px;">
 		          <%= image_tag fishtagram.img_url %>
-		          <a class="right" data-confirm="Are you sure?" rel="nofollow" data-method="delete" style="position:absolute; top:0; right:0" href="<%=fishtagram_path(fishtagram)%>"><i class="material-icons right fishicon">delete</i></a>
+		          <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" style="position:absolute; top:0; right:0" href="<%=fishtagram_path(fishtagram)%>">
+		          	<i class="material-icons right fishicon">
+		          		delete
+		          	</i>
+		          </a>
+		          <a style="position:absolute; top:0; right:20px" href="<%=edit_fishtagram_path(fishtagram)%>">
+		          	<i class="material-icons right fishicon">
+		          		edit
+		         	 </i>
+		          </a>
 		        </div>
 		        <div class="card-content" style="position: relative; margin-top:55px; background-color:#fff">
 		          <p class='truncate'><%= fishtagram.title %></p>
@@ -29,10 +38,6 @@
 		        <div class="card-action valign-wrapper">
 		        	<div class='center-block'>
 			          <a class="waves-effect waves-light btn-small" href="<%=fishtagram_path(fishtagram)%>"><i class="material-icons right">subject</i>view</a>
-
-			          <%= link_to 'Comment', new_fishtagram_comment_path(fishtagram) ,:class=> 'cardbtn' %>
-
-	          <%= link_to 'Edit', edit_fishtagram_path(fishtagram) ,:class=> 'cardbtn'%>
 			        </div>
 		        </div>
 		      </div>

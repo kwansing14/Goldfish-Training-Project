@@ -36,8 +36,7 @@ body {
 	overflow: hidden;
 	&:hover {
 		.scrolling {
-    	/* This is not completely accurate. It resizes to 2x the current width. */
-    	left: -40%;
+    	left: -100%;
     	width: 200%;
 		}
 	}
@@ -47,7 +46,7 @@ body {
     position: relative;
     left: 0%;
     width: 100%;
-    transition: left 3s, width 3s ease;
+    transition: left 2s, width 2s ease;
 }
 
 .innertext {
