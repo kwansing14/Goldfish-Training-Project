@@ -1,51 +1,80 @@
 <div class="container">
 
 	<!-- the mainbody -->
-		<!-- the training programs goes here -->
-		<div class="row">
-		  <div class="carousel carousel-slider" style="margin-top: 70px">
-		  	<div class="carousel-fixed-item center" style="margin-bottom: -45px">
-		  		<div class="white-text" style="font-family: 'Balsamiq Sans';background-color: rgba(24,118,210,0.5); font-size: 20px"><b>
-			  			Wanna teach your goldfish some new tricks?</b>
-			  	</div>
-			  	<div class="white-text" style="font-family: 'Balsamiq Sans';background-color: rgba(0,0,0,0.5); letter-spacing:0.1em">
-			  		Click here to contact one of our trainers now!
-			  	</div>
-			    <div class="button_cont" align="center">
-		    		<a href="mailto:goldfishtrainerds@generalassemb.ly" class="example_d" rel="nofollow noopener" >
-		    			<b>Click here</b>
-		    		</a>
-	    		</div>
-	    	</div>
-	    	<a class="carousel-item" href="#four!"><img src="https://findersfree.com/wp-content/uploads/2012/04/Pet-goldfish-in-a-plastic-bag.jpg"></a>
-		    <a class="carousel-item" href="#one!"><img src="https://thumbs.dreamstime.com/b/goldfish-jumping-out-water-6843576.jpg"></a>
-		    <a class="carousel-item" href="#two!"><img src="https://i.pinimg.com/originals/9a/5d/10/9a5d106356b593e6968e3370fbf957fd.jpg"></a>
-		    <a class="carousel-item" href="#three!"><img src="https://www.davidsaquariumadvice.com/wp-content/uploads/2018/02/Goldfish-Aquarium-101-Everything-You-Need-to-Know-FI.jpg"></a>
-			</div>
+	<!-- the training programs goes here -->
+	<div class='row'>
+	</div>
+	<div class="row">
+	  <div class="carousel carousel-slider z-depth-2" style="margin-top: 50px">
+	  	<div class="carousel-fixed-item center" style="margin-bottom: -45px">
+	  		<div class="white-text" style="font-family: 'Balsamiq Sans';background-color: rgba(24,118,210,0.5); font-size: 20px"><b>
+		  			Wanna teach your goldfish some new tricks?</b>
+		  	</div>
+		  	<div class="white-text" style="font-family: 'Balsamiq Sans';background-color: rgba(0,0,0,0.5); letter-spacing:0.1em">
+		  		Click here to contact one of our trainers now!
+		  	</div>
+		    <div class="button_cont" align="center">
+	    		<a href="mailto:goldfishtrainerds@generalassemb.ly" class="example_d" rel="nofollow noopener" >
+	    			<b>Click here</b>
+	    		</a>
+    		</div>
+    	</div>
+    	<a class="carousel-item"><img src="https://findersfree.com/wp-content/uploads/2012/04/Pet-goldfish-in-a-plastic-bag.jpg"></a>
+	    <a class="carousel-item"><img src="https://thumbs.dreamstime.com/b/goldfish-jumping-out-water-6843576.jpg"></a>
+	    <a class="carousel-item"><img src="https://i.pinimg.com/originals/9a/5d/10/9a5d106356b593e6968e3370fbf957fd.jpg"></a>
+	    <a class="carousel-item"><img src="https://www.davidsaquariumadvice.com/wp-content/uploads/2018/02/Goldfish-Aquarium-101-Everything-You-Need-to-Know-FI.jpg"></a>
 		</div>
-		<div class='row center white-text' style="background-color:#64B5F6; margin-top:15px; font-size: 30px; font-family:'ubuntu'">
-			List of Training Programs
+	</div>
+
+	<div class='row center white-text z-depth-2' style="background-color:#64B5F6; margin-top:15px; font-size: 30px; font-family:'ubuntu'">
+		Training Programs
+	</div>
+
+	<div class="row">
+		<!-- rows 1 of training program -->
+		<% @programs.each do |program, index| %>
+			<% if program.image.first %>
+				<div class="col s6 m3">
+					<div class='card hoverable'>
+						<div class="card-image">
+							<%= link_to program_path(program) do %>
+							  <%= image_tag program.image.first.image_url %>
+							<% end %>
+							<!-- <img src="https://cdn.thisiswhyimbroke.com/images/goldfish-soccer-game-training-kit-640x533.jpg"></img> -->
+			        <span class="innertext" >
+			        		<%= program.name %>
+			        </span>
+			      </div>
+			    </div>
+				</div>
+			<% end %>
+		<% end %>
+	</div>
+
+	<div class='row center white-text z-depth-2' style="background-color:#64B5F6; margin-top:15px; font-size: 30px; font-family:'ubuntu'">
+			Fishtagrams
+	</div>
+
+	<div class='row' style='height:400px'>
+		<div class='col s4' style='border:2px solid black; height:350px'>
 		</div>
 
-		<div class="row">
-			<!-- rows 1 of training program -->
-			<% @programs.each do |program, index| %>
-				<% if program.image.first %>
-					<div class="col s6 m3">
-						<div class='card hoverable'>
-							<div class="card-image">
-								<%= link_to program_path(program) do %>
-								  <%= image_tag program.image.first.image_url %>
-								<% end %>
-								<!-- <img src="https://cdn.thisiswhyimbroke.com/images/goldfish-soccer-game-training-kit-640x533.jpg"></img> -->
-				        <span class="innertext" >
-				        		<%= program.name %>
-				        </span>
-				      </div>
-				    </div>
-					</div>
-				<% end %>
-			<% end %>
+		<div class='col s8' style='border:2px solid black; height:350px'>
+			<div class="section" style='font-size: 30px'>
+				<b>Fishtagrams</b>
+			</div>
+			<div class="divider">
+			</div>
+			<div class='section'>
+				Fishtagrams is platform for goldfish lovers to share pictures of their beautiful goldfishes, their training progress, any share any super cool moments of their goldfish.
+			</div>
+			<div class="divider">
+			</div>
+			<div class='section center'>
+				<div class='btnline3'>
+					<%= link_to 'Click here to check out Fishtagrams', fishtagrams_path %>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>

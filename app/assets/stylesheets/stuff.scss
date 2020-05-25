@@ -15,10 +15,39 @@ body {
 .card {
 	margin:0px
 }
+.card-image{
+	height:177px;
+	max-height:177px;
+}
+.cardbtn {
+	font-size: 10px;
+}
+
+.card-content {
+	overflow: hidden;
+	&:hover {
+		.scrolling {
+    	/* This is not completely accurate. It resizes to 2x the current width. */
+    	left: -40%;
+    	width: 200%;
+		}
+	}
+}
+
+.ellipsis-active {
+	background-color: #700;
+}
+
+.scrolling {
+    position: relative;
+    left: 0%;
+    width: 100%;
+    transition: left 3s, width 3s ease;
+}
 
 .innertext {
 	position: absolute;
-	bottom: 3px;
+	bottom: 0px;
 	left: 0px;
 	font-size: 14px;
 	color: #fff;
@@ -54,6 +83,36 @@ body {
   left: 0;
 }
 .btnline :hover {
+	color: #fff;
+}
+
+/*for submit new post under fishtagrams*/
+.btnline2 {
+  text-decoration: none;
+  display: inline-block;
+  padding: 15px 20px;
+  position: relative;
+  background-color: rgba(100,181,246,0.5);
+  color:#fff;
+}
+.btnline2 :after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 10px;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #fff;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.btnline2 :hover:after {
+	color: #fff;
+  width: 85%;
+  left: 12px;
+}
+.btnline2 :hover {
 	color: #fff;
 }
 

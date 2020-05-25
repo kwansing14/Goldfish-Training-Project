@@ -34,7 +34,7 @@ class FishtagramsController < ApplicationController
     @fishtagram.body = @fishtagram.body.gsub(/(?:\n\r?|\r\n?)/, '<br>')
 
     if @fishtagram.save
-    redirect_to fishtagrams_path
+      redirect_to fishtagrams_path
     else
       render 'new'
     end

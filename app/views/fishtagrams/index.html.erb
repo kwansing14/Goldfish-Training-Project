@@ -1,36 +1,37 @@
-<body class="teal lighten-2">
-	<nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo" style="margin-left: 30px">Pinspiration</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-      	<% if user_signed_in? %>
-        <li stlye="margin-right:30px"><%= link_to 'log out', destroy_user_session_url, method: :delete %></li>
-        <% else %>
-				<li ><%= link_to 'log in', new_user_session_url %></li>
-				<% end %>
-      </ul>
-    </div>
-  </nav>
-	<div class="container" style='display:flex;flex-wrap:wrap; margin-top:30px'>
-			<% @fishtagrams.each do |fishtagram| %>
-		    	<div class="cards-container" style="width:30%; padding:0px; margin: 0 10px">
-			      <div class="card hoverable">
-			        <div class="card-image">
-			          <img src=<%= fishtagram.img_url %>>
-			        </div>
-			        <div class="card-content">
-			          <p><%= fishtagram.title %></p>
-			        </div>
-			        <div class="card-action" style="display:block">
-			          <div class="csedbtn btn-small"><%= link_to 'Comment', new_fishtagram_comment_path(fishtagram) %></div>
-			          <div class="csedbtn btn-small"><%= link_to 'Show', fishtagram_path(fishtagram) %></div>
-			          <div class="csedbtn btn-small"><%= link_to 'Edit', edit_fishtagram_path(fishtagram) %></div>
-			          <div class="csedbtn btn-small"><%= link_to 'Destroy', fishtagram_path(fishtagram),
-	        method: :delete,
-	        data: { confirm: 'Are you sure?' } %></div>
-			        </div>
-			      </div>
-		    	</div>
-	    <% end %>
-  </div>
-</body>
+<div class="container">
+	<div class='row'>
+	</div>
+	<div class='row white-text z-depth-2' style="background-color:#64B5F6; margin-top:15px; font-family:'ubuntu';">
+		<div class='col s4 valign-wrapper' style='height:60px' >
+			<span class='center-block'>Sort</span>
+		</div>
+		<div class='col s4 valign-wrapper'  style='font-size: 20px; height:60px; color:#000'>
+			<span class='center-block' style='border: 2px solid black; padding:2px 8px; border-radius: 5px'>Fishtagrams</span>
+		</div>
+		<div class='col s4 valign-wrapper'  style='height:60px'>
+			<div class='btnline2 center-block'>
+				<%= link_to 'Submit a new post', new_fishtagram_path, :style=>'color:#fff'%>
+			</div>
+		</div>
+	</div>
+	<div class="row" style='border:2px solid black; display:flex;flex-wrap:wrap; margin-top:30px'>
+		<% @fishtagrams.each do |fishtagram| %>
+	  	<div class="cards-container" style="width:31%; padding:0; margin: 10px 10px">
+	      <div class="card hoverable cardh" style="height:325px; max-height:325px">
+	        <div class="card-image">
+	          <img src=<%= fishtagram.img_url %>>
+	        </div>
+	        <div class="card-content">
+	          <p class='truncate'><%= fishtagram.title %></p>
+	        </div>
+	        <div class="card-action">
+	          <%= link_to 'Comment', new_fishtagram_comment_path(fishtagram) ,:class=> 'cardbtn' %>
+	     <!--      <%= link_to 'View', fishtagram_path(fishtagram) ,:class=> 'cardbtn' %>
+	          <%= link_to 'Edit', edit_fishtagram_path(fishtagram) ,:class=> 'cardbtn'%>
+	          <%= link_to 'Delete', fishtagram_path(fishtagram),:class=> 'cardbtn' , method: :delete, data: { confirm: 'Are you sure?' } %>
+ -->	        </div>
+	      </div>
+	  	</div>
+	  <% end %>
+	</div>
+</div>
