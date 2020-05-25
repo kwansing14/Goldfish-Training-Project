@@ -24,8 +24,8 @@ document.addEventListener('DOMContentLoaded', function() {
     let elems3 = document.querySelectorAll('.materialboxed');
     let instances3 = M.Materialbox.init(elems3);
 
-    var elems4 = document.querySelectorAll('.modal');
-    var instances4 = M.Modal.init(elems4);
+    let elems4 = document.querySelectorAll('.modal');
+    let instances4 = M.Modal.init(elems4);
 
     // const sideNav = new Sidenav(document.querySelector('.sidenav.sidenav-fixed'));
     // window.addEventListener('resize', (e) => {
@@ -35,11 +35,22 @@ document.addEventListener('DOMContentLoaded', function() {
     //     }
     // });
 
-    var elems5 = document.querySelectorAll('.sidenav');
-    var instances = M.Sidenav.init(elems5);
+    let elems5 = document.querySelectorAll('.sidenav');
+    let instances5 = M.Sidenav.init(elems5);
+
+    //ellipsis detection
+    function isEllipsisActive(e) {
+     return (e.offsetWidth < e.scrollWidth);
+    }
+
+    let elems6 = document.querySelectorAll('.truncate');;
+    for(var i=0; i < elems6.length; i++) {
+        if ( isEllipsisActive(elems6.item(i)) ) {
+            elems6.item(i).setAttribute("class","truncate scrolling")
+            console.log(elems6.item(i), elems6.item(i).className);
+        }
+    }
 
 
-
+    console.log("Success!")
 });
-
-console.log("hello end of the worlddddddddd")
