@@ -7,7 +7,9 @@ class CommentsController < ApplicationController
   end
 
   def new
+    byebug
     @fishtagram = Fishtagram.find(params[:fishtagram_id])
+    @comments = Comment.where(fishtagram_id: (params[:fishtagram_id]))
   end
 
   def create
@@ -15,11 +17,9 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     @comment.user = current_user
     @comment.fishtagram_id = @fishtagram.id
-    byebug
     if @comment.save
       redirect_to fishtagram_path(@fishtagram)
     else
-      byebug
       render 'new'
     end
   end

@@ -1,36 +1,26 @@
-<body class="teal lighten-2">
-	<nav>
-    <div class="nav-wrapper">
-      <a href="#" class="brand-logo" style="margin-left: 30px">Pinspiration</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down">
-      	<% if user_signed_in? %>
-        <li stlye="margin-right:30px"><%= link_to 'log out', destroy_user_session_url, method: :delete %></li>
-        <% else %>
-				<li ><%= link_to 'log in', new_user_session_url %></li>
-				<% end %>
-      </ul>
+<div class="container" style="margin-top:30px; margin-bottom: 30px" >
+	<div class="card">
+    <div class="card-content">
+    	<div class='imgcardshow center'>
+    		<%= image_tag @fishtagram.img_url, :style=>"max-width:400px"%>
+    	</div>
+      <span class="card-title"><%= @fishtagram.title %></span>
     </div>
-  </nav>
-  <div class="container" style="margin-top:30px">
-  	<div class="card">
-        <div class="card-content">
-        	<div class='imgcardshow'>
-        		<img src=<%= @fishtagram.img_url %>>
-        	</div>
-          <span class="card-title"><%= @fishtagram.title %></span>
-        </div>
-        <div class="card-action">
-        	<%= form_with scope: :comment, url: fishtagram_comments_path, local: true do |form| %>
-        	<div>
-        		Comments:<br>
-		    		<%= form.text_area :body %>
-		  		</div>
-				  <div>
-				    <%= form.submit :class=>'btn'%>
-				  </div>
-					<% end %>
-					<%= link_to 'Home page', root_path %>
+    <div class="card-action">
+    	<% @comments.each do |comment| %>
+    		<div class="row" style="padding:10px; margin-bottom: 15px">
+		      <div class="col" style="2px solid black"><span><%= comment.body %></span></div>
 				</div>
+			<% end %>
+    	<%= form_with scope: :comment, url: fishtagram_comments_path, local: true do |form| %>
+    	<div class='row' style="padding:10px">
+    		<%= form.text_area :body , :placeholder=>'new comment...'%>
+    		<%= form.submit :class=>'btn'%>
+  		</div>
+			<% end %>
+			<div class='divider'>
 			</div>
+			<%= link_to 'Home page', root_path %>
 		</div>
-</body>
+	</div>
+</div>

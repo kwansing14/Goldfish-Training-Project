@@ -36,13 +36,13 @@
 			<% if program.image.first %>
 				<div class="col s6 m3">
 					<div class='card hoverable'>
-						<div class="card-image">
-							<%= link_to program_path(program) do %>
-							  <%= image_tag program.image.first.image_url %>
+						<div class="card-image center valign-wrapper">
+							<%= link_to program_path(program) do%>
+							  <%= image_tag program.image.first.image_url, :style=>"max-height: 144px; max-width:195px" %>
 							<% end %>
 							<!-- <img src="https://cdn.thisiswhyimbroke.com/images/goldfish-soccer-game-training-kit-640x533.jpg"></img> -->
 			        <span class="innertext" >
-			        		<%= program.name %>
+			        	<%= program.name %>
 			        </span>
 			      </div>
 			    </div>
