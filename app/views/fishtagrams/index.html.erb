@@ -25,15 +25,12 @@
 		</div>
 	</div>
 	<div class="row" style='display:flex; flex-wrap:wrap; margin-top: 30px'>
-		<% @fishtagrams.each_with_index do |fishtagram, index| %>
+		<% @fishtagrams.each do |fishtagram| %>
 		  <div class="col l4 m6 s12 center-align fishcol" style="margin-bottom:10px; margin-left:0px">
 		  	<div class="cards-container">
 		      <div class="card hoverable" style="height:333px; max-height:333px">
 		        <div class="card-image" style="height:300px;">
 		          <%= image_tag fishtagram.img_url %>
-			          <div style="position:absolute; top:1px; left:4px; color:#3E3E3E">
-				          @<%= fishtagram.user.name %>:
-				        </div>
 		          	<% if current_user %>
 			          	<% if fishtagram.user_id == current_user.id %>
 				          <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" style="position:absolute; top:0; right:0" href="<%=fishtagram_path(fishtagram)%>">
@@ -51,6 +48,9 @@
 		        </div>
 		        <div class="card-content" style="position: relative; margin-top:55px; background-color:#fff">
 		          <p class='truncate'><%= fishtagram.title %></p>
+		          	<div style="position:absolute; top:1px; left:10px; color:#3E3E3E">
+				          @<%= fishtagram.user.name %>:
+				        </div>
 		        </div>
 		        <div class="card-action valign-wrapper">
 		        	<div class='center-block'>
