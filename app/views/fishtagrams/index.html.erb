@@ -2,7 +2,7 @@
 	<div class='row'>
 	</div>
 	<div class='row white-text z-depth-2' style="background-color:#64B5F6; margin-top:15px; font-family:'ubuntu';">
-		<div class='col s4 valign-wrapper' style='height:60px' >
+		<div class='col s12 m4 valign-wrapper' style='height:60px' >
 			<% if current_user %>
 				<% if @sorted %>
 					<div class='btnline2 center-block'>
@@ -15,10 +15,10 @@
 				<% end %>
 			<% end %>
 		</div>
-		<div class='col s4 valign-wrapper'  style='font-size: 20px; height:60px; color:#000'>
+		<div class='col s12 m4 valign-wrapper'  style='font-size: 20px; height:60px; color:#000'>
 			<span class='center-block white-text' style='border: 2px solid white; padding:2px 8px; border-radius: 5px'>Fishtagrams</span>
 		</div>
-		<div class='col s4 valign-wrapper'  style='height:60px'>
+		<div class='col s12 m4 valign-wrapper'  style='height:60px'>
 			<div class='btnline2 center-block'>
 				<%= link_to 'Submit a new post', new_fishtagram_path, :style=>'color:#fff'%>
 			</div>

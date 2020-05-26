@@ -29,18 +29,9 @@ document.addEventListener('DOMContentLoaded', function() {
     let elems4 = document.querySelectorAll('.modal');
     let instances4 = M.Modal.init(elems4);
 
-    // const sideNav = new Sidenav(document.querySelector('.sidenav.sidenav-fixed'));
-    // window.addEventListener('resize', (e) => {
-    //     if (sideNav.isOpen) {
-    //         sideNav.close();
-    //         sideNav.open();
-    //     }
-    // });
-
     let elems5 = document.querySelectorAll('.sidenav');
     let instances5 = M.Sidenav.init(elems5);
 
-    //ellipsis detection
     function isEllipsisActive(e) {
         return (e.offsetWidth < e.scrollWidth);
     }
@@ -54,6 +45,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     console.log(window.matchMedia("(max-width:700px)").matches)
+
+    function myFunction(x) {
+        const temp = document.querySelectorAll('.btnflex')
+        if (x.matches) { // If media query matches
+            temp[0].innerHTML = "<i class='material-icons right'>create</i>";
+            temp[1].innerHTML = "<i class='material-icons right'>home</i>";
+            temp[2].innerHTML = "<i class='material-icons right'>keyboard_backspace</i>";
+            console.log('123')
+        } else {
+            temp[0].innerHTML = "<i class='material-icons right'>create</i>Comment";
+            temp[1].innerHTML = "<i class='material-icons right'>home</i>Home";
+            temp[2].innerHTML = "<i class='material-icons right'>keyboard_backspace</i>Back";
+            console.log('321')
+        }
+    }
+    var x = window.matchMedia("(max-width: 700px)")
+    myFunction(x)
+    x.addListener(myFunction)
 
 
     console.log("Success!")
