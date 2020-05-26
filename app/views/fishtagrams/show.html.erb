@@ -39,7 +39,7 @@
 					</div>
 					<div class='section'>
 						<% if current_user %>
-							<a class="waves-effect waves-light btn-small" href="<%=new_fishtagram_comment_path(@fishtagram.id)%>" style="margin-left: 20px">
+							<a class="waves-effect waves-light btn-small btnflex" href="<%=new_fishtagram_comment_path(@fishtagram.id)%>" style="margin-left: 20px">
 								<i class="material-icons right">create</i>Comment
 							</a>
 						<% else %>
@@ -48,7 +48,7 @@
 							</a>
 						<% end %>
 						<a class="waves-effect waves-light btn-small right btnflex" style="margin-right:20px" href="<%=root_path%>"><i class="material-icons right">home</i>Home</a>
-						<a class="waves-effect waves-light btn-small right btnflex" style="margin-right:10px" href="<%=fishtagrams_path%>"><i class="material-icons right">create</i>Back</a>
+						<a class="waves-effect waves-light btn-small right btnflex" style="margin-right:10px" href="<%=fishtagrams_path%>"><i class="material-icons right">keyboard_backspace</i>Back</a>
 					</div>
         </div>
       </div>
