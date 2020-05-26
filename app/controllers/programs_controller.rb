@@ -3,8 +3,8 @@ class ProgramsController < ApplicationController
   before_action :authenticate_user!, :except => [ :show, :index ]
 
   def index
-    @random_fishtagram1 = Fishtagram.order("RANDOM()").first
-    @random_fishtagram2 = Fishtagram.order("RANDOM()").last
+    @fishtagrams = Fishtagram.all
+    @random_fishtagram = @fishtagrams.shuffle
     @programs = Program.all
     # validated working. into views
     # <% @programs.each do |program|%>

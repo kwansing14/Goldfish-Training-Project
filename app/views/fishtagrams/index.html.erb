@@ -4,7 +4,15 @@
 	<div class='row white-text z-depth-2' style="background-color:#64B5F6; margin-top:15px; font-family:'ubuntu';">
 		<div class='col s4 valign-wrapper' style='height:60px' >
 			<% if current_user %>
-				<%= link_to 'My Fishtagrams', fishtagram_sort_path, :style=>'color:#fff'%>
+				<% if @sorted %>
+					<div class='btnline2 center-block'>
+						<%= link_to 'All Fishtagrams', fishtagrams_path, :style=>'color:#fff'%>
+					</div>
+				<% else %>
+					<div class='btnline2 center-block'>
+						<%= link_to 'My Fishtagrams', fishtagram_sort_path, :style=>'color:#fff'%>
+					</div>
+				<% end %>
 			<% end %>
 		</div>
 		<div class='col s4 valign-wrapper'  style='font-size: 20px; height:60px; color:#000'>
