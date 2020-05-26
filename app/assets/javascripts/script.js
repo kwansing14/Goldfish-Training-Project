@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     //ellipsis detection
     function isEllipsisActive(e) {
-     return (e.offsetWidth < e.scrollWidth);
+        return (e.offsetWidth < e.scrollWidth);
     }
 
     let elems6 = document.querySelectorAll('.truncate');;
@@ -52,6 +52,8 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log(elems6.item(i), elems6.item(i).className);
         }
     }
+
+    console.log(window.matchMedia("(max-width:700px)").matches)
 
 
     console.log("Success!")

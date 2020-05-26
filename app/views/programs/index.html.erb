@@ -36,8 +36,8 @@
 			<% if program.image.first %>
 				<div class="col s6 m3">
 					<div class='card hoverable'>
-						<div class="card-image center valign-wrapper">
-							<%= link_to program_path(program) do%>
+						<div class="card-image valign-wrapper">
+							<%= link_to program_path(program), :class=>'center-block' do%>
 							  <%= image_tag program.image.first.image_url, :style=>"max-height: 144px; max-width:195px" %>
 							<% end %>
 			        <span class="innertext" >
@@ -54,8 +54,8 @@
 			Fishtagrams
 	</div>
 
-	<div class='row' style='height:400px'>
-		<div class='col s4' style='border:2px solid black; height:350px'>
+	<div class='row'>
+		<div class='col s12 m4' style='height:350px'>
 			<div class='row center' style='padding-top:16px'>
 				<%= image_tag @random_fishtagram1.img_url, :style=>"max-height: 144px; max-width:195px" %>
 			</div>
@@ -63,8 +63,7 @@
 				<%= image_tag @random_fishtagram2.img_url, :style=>"max-height: 144px; max-width:195px" %>
 			</div>
 		</div>
-
-		<div class='col s8' style='border:2px solid black; height:350px'>
+		<div class='col s12 m8' style='height:350px'>
 			<div class="section" style='font-size: 30px'>
 				<b>Fishtagrams</b>
 			</div>
@@ -73,12 +72,13 @@
 			<div class='section'>
 				Fishtagrams is platform for goldfish lovers to share pictures of their beautiful goldfishes, their training progress, any share any super cool moments of their goldfish.
 			</div>
+			<br>
 			<div class="divider">
 			</div>
 			<div class='section center'>
+				<br><br>
 				<div class='btnline3'>
-					<a class="waves-effect waves-light btn-small" href="<%=fishtagrams_path%>"><i class="material-icons right">forum</i>Click here to checkout Fishtagram</a>
-
+					<a class="waves-effect waves-light btn-small left" href="<%=fishtagrams_path%>"><i class="material-icons right">forum</i>Click here to checkout Fishtagram</a>
 				</div>
 			</div>
 		</div>

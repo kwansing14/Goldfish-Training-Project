@@ -2,10 +2,10 @@ class FishtagramsController < ApplicationController
   def show
     @fishtagram = Fishtagram.find(params[:id])
     @comments = Comment.where(fishtagram_id: (params[:id]))
+    byebug
   end
 
   def edit
-    byebug
     @fishtagram = Fishtagram.find(params[:id])
   end
 
@@ -14,7 +14,6 @@ class FishtagramsController < ApplicationController
   end
 
   def update
-    byebug
     @fishtagram = Fishtagram.find(params[:id])
     @fishtagram.update(fishtagram_params)
     redirect_to @fishtagram

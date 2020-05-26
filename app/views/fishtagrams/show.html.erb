@@ -13,23 +13,26 @@
 	        		<h6>Looks like this comment section is still empty ):</h6>
 	        	<% end %>
 	        	<% @comments.each do |comment| %>
-	        		<div class="row" style="padding:10px; margin-bottom: 15px">
-					      <div class="col" style="2px solid black">
-					      	<span><%= comment.body %></span>
-					      </div>
+	        		<div class="row" style="padding:1px; margin-bottom: 15px">
 
 					      <% if current_user %>
 						      <% if comment.user_id == current_user.id %>
-							      <div class="right">
+							      <div class='row' style="margin:1px" >
+							      	<span>
+							      		@username:
+							      	</span>
 								      <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="<%=fishtagram_comment_path(comment)%>">
 								      	<i class="material-icons right fishicon">delete</i>
 								      </a>
-								      <a class="right" href="<%=edit_fishtagram_comment_path(comment) %>">
+								      <a href="<%=edit_fishtagram_comment_path(comment) %>">
 								      	<i class="material-icons right fishicon">edit</i>
 									    </a>
 							      </div>
 							    <% end %>
 							  <% end %>
+							  <div class="row" style="margin:1px">
+					      	<span><%= comment.body %></span>
+					      </div>
 					    </div>
 						<% end %>
 					</div>
@@ -45,12 +48,12 @@
 								<i class="material-icons right">create</i>Please Login
 							</a>
 						<% end %>
-						<a class="waves-effect waves-light btn-small right" style="margin-right:20px" href="<%=root_path%>"><i class="material-icons right">home</i>Home</a>
-						<a class="waves-effect waves-light btn-small right" style="margin-right:10px" href="<%=fishtagrams_path%>"><i class="material-icons right">create</i>Back</a>
+						<%byebug%>
+						<a class="waves-effect waves-light btn-small right btnflex" style="margin-right:20px" href="<%=root_path%>"><i class="material-icons right">home</i>Home</a>
+						<a class="waves-effect waves-light btn-small right btnflex" style="margin-right:10px" href="<%=fishtagrams_path%>"><i class="material-icons right">create</i>Back</a>
 					</div>
         </div>
       </div>
     </div>
   </div>
-
-	</div>
+</div>
