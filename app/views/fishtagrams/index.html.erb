@@ -33,12 +33,15 @@
 		          <%= image_tag fishtagram.img_url %>
 		          <% if current_user %>
 			          <% if fishtagram.user_id == current_user.id %>
+			          	<div style="position:absolute; top:1px; left:4px; color:#3E3E3E">
+			          		@<%= fishtagram.user.name %>:
+			          	</div>
 				          <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" style="position:absolute; top:0; right:0" href="<%=fishtagram_path(fishtagram)%>">
 				          	<i class="material-icons right fishicon">
 				          		delete
 				          	</i>
 				          </a>
-				          <a style="position:absolute; top:0; right:20px" href="<%=edit_fishtagram_path(fishtagram)%>">
+				          <a style="position:absolute; top:0; right:24px" href="<%=edit_fishtagram_path(fishtagram)%>">
 				          	<i class="material-icons right fishicon">
 				          		edit
 				         	 </i>

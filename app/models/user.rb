@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :bubbles
   has_many :goldfishes
   has_many :follows
+  has_many :comments
 end
