@@ -8,7 +8,7 @@
 			<% end %>
 		</div>
 		<div class='col s4 valign-wrapper'  style='font-size: 20px; height:60px; color:#000'>
-			<span class='center-block' style='border: 2px solid black; padding:2px 8px; border-radius: 5px'>Fishtagrams</span>
+			<span class='center-block white-text' style='border: 2px solid white; padding:2px 8px; border-radius: 5px'>Fishtagrams</span>
 		</div>
 		<div class='col s4 valign-wrapper'  style='height:60px'>
 			<div class='btnline2 center-block'>
@@ -16,29 +16,38 @@
 			</div>
 		</div>
 	</div>
-	<div class="row" style='border:2px solid black; display:flex;flex-wrap:wrap; margin-top:30px'>
-		<% @fishtagrams.each do |fishtagram| %>
-	  	<div class="cards-container" style="width:31%; padding:0; margin: 10px 10px">
-	      <div class="card hoverable cardh" style="height:325px; max-height:325px">
-	        <div class="card-image">
-	          <img src=<%= fishtagram.img_url %>>
-	        </div>
-	        <div class="card-content">
-	          <p class='truncate'><%= fishtagram.title %></p>
-	        </div>
-	        <div class="card-action">
-	        	<% if current_user %>
-		          <%= link_to 'Comment', new_fishtagram_comment_path(fishtagram) ,:class=> 'cardbtn' %>
-		         <% end %>
-	          <%= link_to 'View', fishtagram_path(fishtagram) ,:class=> 'cardbtn' %>
-	          <% if current_user %>
-		          <% if fishtagram.user_id == current_user.id %>
-			          <%= link_to 'Edit', edit_fishtagram_path(fishtagram) ,:class=> 'cardbtn'%>
-			          <%= link_to 'Delete', fishtagram_path(fishtagram),:class=> 'cardbtn' , method: :delete, data: { confirm: 'Are you sure?' } %>
+	<div class="row" style='display:flex; flex-wrap:wrap; margin-top: 30px'>
+		<% @fishtagrams.each_with_index do |fishtagram, index| %>
+		  <div class="col l4 m6 s12 center-align fishcol" style="margin-bottom:10px; margin-left:0px">
+		  	<div class="cards-container">
+		      <div class="card hoverable" style="height:333px; max-height:333px">
+		        <div class="card-image" style="height:300px;">
+		          <%= image_tag fishtagram.img_url %>
+		          <% if current_user %>
+			          <% if fishtagram.user_id == current_user.id %>
+				          <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" style="position:absolute; top:0; right:0" href="<%=fishtagram_path(fishtagram)%>">
+				          	<i class="material-icons right fishicon">
+				          		delete
+				          	</i>
+				          </a>
+				          <a style="position:absolute; top:0; right:20px" href="<%=edit_fishtagram_path(fishtagram)%>">
+				          	<i class="material-icons right fishicon">
+				          		edit
+				         	 </i>
+				          </a>
+				        <% end %>
 			        <% end %>
-		        <% end %>
-	        </div>
-	      </div>
+		        </div>
+		        <div class="card-content" style="position: relative; margin-top:55px; background-color:#fff">
+		          <p class='truncate'><%= fishtagram.title %></p>
+		        </div>
+		        <div class="card-action valign-wrapper">
+		        	<div class='center-block'>
+			          <a class="waves-effect waves-light btn-small" href="<%=fishtagram_path(fishtagram)%>"><i class="material-icons right">subject</i>view</a>
+			        </div>
+		        </div>
+		      </div>
+	  		</div>
 	  	</div>
 	  <% end %>
 	</div>

@@ -38,7 +38,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:fishtagram_id])
     @comment.destroy
-    redirect_to root_path
+    redirect_to fishtagram_path(params[:id])
   end
 
   private
