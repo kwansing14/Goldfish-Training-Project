@@ -14,22 +14,21 @@
 	        	<% end %>
 	        	<% @comments.each do |comment| %>
 	        		<div class="row" style="padding:1px; margin-bottom: 15px">
-
-					      <% if current_user %>
-						      <% if comment.user_id == current_user.id %>
-							      <div class='row' style="margin:1px" >
-							      	<span style="font-size: 12px; color:#3E3E3E">
-							      		@<%= comment.user.name %> :
-							      	</span>
-								      <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="<%=fishtagram_comment_path(comment)%>">
-								      	<i class="material-icons right fishicon">delete</i>
-								      </a>
-								      <a href="<%=edit_fishtagram_comment_path(comment) %>">
-								      	<i class="material-icons right fishicon">edit</i>
-									    </a>
-							      </div>
-							    <% end %>
-							  <% end %>
+							  <div class='row' style="margin:1px" >
+							    <span style="font-size: 12px; color:#3E3E3E">
+							     	@<%= comment.user.name %> :
+							    </span>
+							      <% if current_user %>
+						      		<% if comment.user_id == current_user.id %>
+									      <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="<%=fishtagram_comment_path(comment)%>">
+									      	<i class="material-icons right fishicon">delete</i>
+									      </a>
+									      <a href="<%=edit_fishtagram_comment_path(comment) %>">
+									      	<i class="material-icons right fishicon">edit</i>
+										    </a>
+									    <% end %>
+							  		<% end %>
+							    </div>
 							  <div class="row" style="margin:1px">
 					      	<span><%= comment.body %></span>
 					      </div>
