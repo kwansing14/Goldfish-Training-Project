@@ -31,7 +31,6 @@ class FishtagramsController < ApplicationController
   def create
     @fishtagram = Fishtagram.new(fishtagram_params)
     @fishtagram.user = current_user
-    @fishtagram.body = @fishtagram.body.gsub(/(?:\n\r?|\r\n?)/, '<br>')
 
     if @fishtagram.save
       redirect_to fishtagrams_path
