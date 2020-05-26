@@ -42,9 +42,6 @@
     <div>
     	<ul id="slide-out" class="sidenav">
 		    <li><div class="user-view">
-		      <div class="background">
-		        <img src="images/office.jpg">
-		      </div>
 		      <a href="#user"><%= image_tag 'goldfish3.jpeg', :class=>"logo" %></a>
 		      <a href="#name"><span class="white-text name">John Doe</span></a>
 		      <a href="#email"><span class="white-text email">jdandturk@gmail.com</span></a>
@@ -62,13 +59,21 @@
 			    <!-- first subheader -->
 			    <li><div class="divider"></div></li>
 			    <li><a class="subheader">Login/sign up</a></li>
-					<li><%= link_to 'Log in', new_user_session_url %></li>
-					<li><%= link_to "Sign up", new_user_registration_path %></li>
+					<li><%= link_to 'Log in', new_user_session_url, :class => "waves-effect" %></li>
+					<li><%= link_to "Sign up", new_user_registration_path, :class => "waves-effect" %></li>
 				<% end %>
-				<li><div class="divider"></div></li>
-		    <li><a class="subheader">Progams: </a></li>
+				<% if current_user %>
+					<li><div class="divider"></div></li>
+			    <li><a class="subheader">Progams: </a></li>
 		    <!-- Third link -->
-		    <li><a class="waves-effect" href="#!">1st program status</a></li>
+			    <% if @enrolled.length != 0 %>
+				    <% @enrolled.each do |programuser|%> 
+					    <li><a><%= programuser.inspect %></a></li>
+					  <% end %>
+					<% else %>
+						<li><a class="subheader">Currently not enrolled</a></li>
+					<% end %>
+			  <% end %>
 		  </ul>
     </div>
     <!-- FOOTER -->
