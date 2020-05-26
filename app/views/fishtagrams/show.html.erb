@@ -17,23 +17,34 @@
 					      <div class="col" style="2px solid black">
 					      	<span><%= comment.body %></span>
 					      </div>
-					      <div class="right">
-						      <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="<%=fishtagram_comment_path(comment)%>">
-						      	<i class="material-icons right fishicon">delete</i>
-						      </a>
-						      <a class="right" href="<%=edit_fishtagram_comment_path(comment) %>">
-						      	<i class="material-icons right fishicon">edit</i>
-							    </a>
-					      </div>
+
+					      <% if current_user %>
+						      <% if comment.user_id == current_user.id %>
+							      <div class="right">
+								      <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="<%=fishtagram_comment_path(comment)%>">
+								      	<i class="material-icons right fishicon">delete</i>
+								      </a>
+								      <a class="right" href="<%=edit_fishtagram_comment_path(comment) %>">
+								      	<i class="material-icons right fishicon">edit</i>
+									    </a>
+							      </div>
+							    <% end %>
+							  <% end %>
 					    </div>
 						<% end %>
 					</div>
 					<div class='divider'>
 					</div>
 					<div class='section'>
-						<a class="waves-effect waves-light btn-small" href="<%=new_fishtagram_comment_path(@fishtagram.id)%>" style="margin-left: 20px">
-							<i class="material-icons right">create</i>Comment</a>
-
+						<% if current_user %>
+							<a class="waves-effect waves-light btn-small" href="<%=new_fishtagram_comment_path(@fishtagram.id)%>" style="margin-left: 20px">
+								<i class="material-icons right">create</i>Comment
+							</a>
+						<% else %>
+								<a class="waves-effect waves-light btn-small" style="margin-left: 20px">
+								<i class="material-icons right">create</i>Please Login
+							</a>
+						<% end %>
 						<a class="waves-effect waves-light btn-small right" style="margin-right:20px" href="<%=root_path%>"><i class="material-icons right">home</i>Home</a>
 						<a class="waves-effect waves-light btn-small right" style="margin-right:10px" href="<%=fishtagrams_path%>"><i class="material-icons right">create</i>Back</a>
 					</div>

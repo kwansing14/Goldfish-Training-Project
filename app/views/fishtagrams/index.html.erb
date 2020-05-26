@@ -3,7 +3,9 @@
 	</div>
 	<div class='row white-text z-depth-2' style="background-color:#64B5F6; margin-top:15px; font-family:'ubuntu';">
 		<div class='col s4 valign-wrapper' style='height:60px' >
-			<span class='center-block'>Sort</span>
+			<% if current_user %>
+				<%= link_to 'My Fishtagrams', fishtagram_sort_path, :style=>'color:#fff'%>
+			<% end %>
 		</div>
 		<div class='col s4 valign-wrapper'  style='font-size: 20px; height:60px; color:#000'>
 			<span class='center-block white-text' style='border: 2px solid white; padding:2px 8px; border-radius: 5px'>Fishtagrams</span>
@@ -21,16 +23,20 @@
 		      <div class="card hoverable" style="height:333px; max-height:333px">
 		        <div class="card-image" style="height:300px;">
 		          <%= image_tag fishtagram.img_url %>
-		          <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" style="position:absolute; top:0; right:0" href="<%=fishtagram_path(fishtagram)%>">
-		          	<i class="material-icons right fishicon">
-		          		delete
-		          	</i>
-		          </a>
-		          <a style="position:absolute; top:0; right:20px" href="<%=edit_fishtagram_path(fishtagram)%>">
-		          	<i class="material-icons right fishicon">
-		          		edit
-		         	 </i>
-		          </a>
+		          <% if current_user %>
+			          <% if fishtagram.user_id == current_user.id %>
+				          <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" style="position:absolute; top:0; right:0" href="<%=fishtagram_path(fishtagram)%>">
+				          	<i class="material-icons right fishicon">
+				          		delete
+				          	</i>
+				          </a>
+				          <a style="position:absolute; top:0; right:20px" href="<%=edit_fishtagram_path(fishtagram)%>">
+				          	<i class="material-icons right fishicon">
+				          		edit
+				         	 </i>
+				          </a>
+				        <% end %>
+			        <% end %>
 		        </div>
 		        <div class="card-content" style="position: relative; margin-top:55px; background-color:#fff">
 		          <p class='truncate'><%= fishtagram.title %></p>
