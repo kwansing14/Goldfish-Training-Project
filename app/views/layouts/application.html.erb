@@ -62,13 +62,17 @@
 			    <!-- first subheader -->
 			    <li><div class="divider"></div></li>
 			    <li><a class="subheader">Login/sign up</a></li>
-					<li><%= link_to 'Log in', new_user_session_url %></li>
-					<li><%= link_to "Sign up", new_user_registration_path %></li>
+					<li><%= link_to 'Log in', new_user_session_url, :class => "waves-effect" %></li>
+					<li><%= link_to "Sign up", new_user_registration_path, :class => "waves-effect" %></li>
 				<% end %>
-				<li><div class="divider"></div></li>
-		    <li><a class="subheader">Progams: </a></li>
-		    <!-- Third link -->
-		    <li><a class="waves-effect" href="#!">1st program status</a></li>
+				<% if current_user %>
+					<li><div class="divider"></div></li>
+			    <li><a class="subheader">Enrolled in: </a></li>
+		    <!-- First link -->
+			    <% @enrolled.each do |programuser|%> 
+				   	<li><a><%= programuser['name'] %></a></li>
+				  <% end %>
+			  <% end %>
 		  </ul>
     </div>
     <!-- FOOTER -->
