@@ -32,6 +32,10 @@ document.addEventListener('DOMContentLoaded', function() {
     let elems5 = document.querySelectorAll('.sidenav');
     let instances5 = M.Sidenav.init(elems5);
 
+    function isEllipsisActive(e) {
+        return (e.offsetWidth < e.scrollWidth);
+    }
+
     let elems6 = document.querySelectorAll('.truncate');;
     for(var i=0; i < elems6.length; i++) {
         if ( isEllipsisActive(elems6.item(i)) ) {
