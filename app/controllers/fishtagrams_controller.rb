@@ -2,7 +2,6 @@ class FishtagramsController < ApplicationController
   def show
     @fishtagram = Fishtagram.find(params[:id])
     @comments = Comment.where(fishtagram_id: (params[:id]))
-    byebug
   end
 
   def edit
