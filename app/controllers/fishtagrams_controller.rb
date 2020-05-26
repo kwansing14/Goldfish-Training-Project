@@ -44,6 +44,7 @@ class FishtagramsController < ApplicationController
 
   def index_sort
     @fishtagrams = Fishtagram.where(user_id: current_user.id)
+    @sorted = true
     render 'index'
   end
 
