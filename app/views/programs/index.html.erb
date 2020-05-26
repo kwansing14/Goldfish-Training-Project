@@ -57,10 +57,14 @@
 	<div class='row' style='height:400px'>
 		<div class='col s4' style='border:2px solid black; height:350px'>
 			<div class='row center' style='padding-top:16px'>
-				<%= image_tag @random_fishtagram.first.img_url, :style=>"max-height: 144px; max-width:195px" %>
+				<% if @random_fishtagram.first %>
+					<%= image_tag @random_fishtagram.first.img_url, :style=>"max-height: 144px; max-width:195px" %>
+				<% end %>
 			</div>
 			<div class='row center'>
-				<%= image_tag @random_fishtagram.last.img_url, :style=>"max-height: 144px; max-width:195px" %>
+				<% if @random_fishtagram.last %>
+					<%= image_tag @random_fishtagram.last.img_url, :style=>"max-height: 144px; max-width:195px" %>
+				<% end %>
 			</div>
 		</div>
 

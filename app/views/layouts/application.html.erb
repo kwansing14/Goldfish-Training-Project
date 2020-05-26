@@ -67,15 +67,11 @@
 				<% end %>
 				<% if current_user %>
 					<li><div class="divider"></div></li>
-			    <li><a class="subheader">Progams: </a></li>
-		    <!-- Third link -->
-			    <% if @enrolled.length != 0 %>
-				    <% @enrolled.each do |programuser|%> 
-					    <li><a><%= programuser.inspect %></a></li>
-					  <% end %>
-					<% else %>
-						<li><a class="subheader">Currently not enrolled</a></li>
-					<% end %>
+			    <li><a class="subheader">Enrolled in: </a></li>
+		    <!-- First link -->
+			    <% @enrolled.each do |programuser|%> 
+				    <li><a><%= programuser['name'] %></a></li>
+				  <% end %>
 			  <% end %>
 		  </ul>
     </div>

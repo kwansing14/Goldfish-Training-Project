@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
   before_action :set_constants
     def set_constants
       if current_user
-        @programs_user = Programs_user.where(user_id: current_user.id)
-        @enrolled = User.joins(:programs).where(user_id: current_user.id)
+        sql = "SELECT programs.name, programs_users.* FROM programs INNER JOIN programs_users ON (programs.id = programs_users.program_id) WHERE programs_users.user_id = " + current_user.id.to_s + ";"
+        @enrolled = ActiveRecord::Base.connection.execute(sql)
       end
     end
 
