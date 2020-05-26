@@ -1,9 +1,8 @@
-<div class="container" style="margin-top:30px">
+<!-- <div class="container" style="margin-top:30px">
 	<div class="row">
     <div class="col s12">
       <div class="card">
         <div class="card-content">
-        	<% byebug %>
 					<%= form_with url: fishtagram_comment_path, method: "patch",scope: :comment, local: true do |form| %>
 					  <p>
 					  	Comment:<br>
@@ -19,4 +18,65 @@
 			</div>
 		</div>
 	</div>
+</div> -->
+	<div class="container" style="margin-top:30px">
+		<div class="row">
+	    <div class="col s12">
+	      <div class="card">
+	        <div class="card-content">
+	        	<div class='imgcardshow center'>
+	        		<%= image_tag @fishtagram.img_url, :style=>"max-width:400px"%>
+	        	</div>
+	          <span class="card-title"><%= @fishtagram.title %></span>
+	        </div>
+	        <div class="card-action">
+	        	<% @comments.each do |comment| %>
+	        		<div class="row" style="padding:10px; margin-bottom: 15px">
+					      <div class="col" style="2px solid black">
+					      	<span><%= comment.body %></span>
+					      </div>
+					      <% if current_user %>
+						      <% if comment.user_id == current_user.id %>
+							      <div class="right">
+								      <a data-confirm="Are you sure?" rel="nofollow" data-method="delete" href="<%=fishtagram_comment_path(comment)%>">
+								      	<i class="material-icons right fishicon">delete</i>
+								      </a>
+								      <a class="right" href="<%=edit_fishtagram_comment_path(comment) %>">
+								      	<i class="material-icons right fishicon">edit</i>
+									    </a>
+							      </div>
+							    <% end %>
+							  <% end %>
+					    </div>
+						<% end %>
+						<%= form_with url: fishtagram_comment_path, method: "patch",scope: :comment, local: true do |form| %>
+						  <p>
+						  	Comment:<br>
+						    <%= form.text_area :body %>
+						  </p>
+
+						  <p>
+						    <%= form.submit :class=>'class="waves-effect waves-light btn-small' %>
+						  </p>
+						<% end %>
+					</div>
+					<div class='divider'>
+					</div>
+					<div class='section'>
+						<% if current_user %>
+							<a class="waves-effect waves-light btn-small" href="<%=new_fishtagram_comment_path(@fishtagram.id)%>" style="margin-left: 20px">
+								<i class="material-icons right">create</i>Comment
+							</a>
+						<% else %>
+							<a class="waves-effect waves-light btn-small" style="margin-left: 20px">
+								<i class="material-icons right">create</i>Please Login
+							</a>
+						<% end %>
+						<a class="waves-effect waves-light btn-small right" style="margin-right:20px" href="<%=root_path%>"><i class="material-icons right">home</i>Home</a>
+						<a class="waves-effect waves-light btn-small right" style="margin-right:10px" href="<%=fishtagrams_path%>"><i class="material-icons right">create</i>Back</a>
+					</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

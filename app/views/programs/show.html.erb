@@ -1,7 +1,7 @@
 <div class='container'>
-	<div class='row' style="border:2px solid red; margin-top: 50px;">
-		<div class="col s12 center" style="border:2px solid green; max-height:210px">
-			  <div class="carousel carousel-slider" style="border:2px solid black; max-height:210px">
+	<div class='row' style="margin-top: 50px;">
+		<div class="col s12 center" style="max-height:210px">
+			  <div class="carousel carousel-slider" style="max-height:210px">
 			  	<% @images.each do |image| %>
 				    <a class="carousel-item">
 				    	<%= image_tag image.image_url , :class=>"showImg"%>

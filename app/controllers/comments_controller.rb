@@ -24,6 +24,8 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    @fishtagram = Fishtagram.find(params[:id])
+    @comments = Comment.where(fishtagram_id: (params[:id]))
     @comment = Comment.find(params[:fishtagram_id])
   end
 
