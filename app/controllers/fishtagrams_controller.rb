@@ -48,6 +48,6 @@ class FishtagramsController < ApplicationController
 
   private
   def fishtagram_params
-    params.require(:fishtagram).permit(:body, :title, :img_url)
+    params.require(:fishtagram).permit(:title, :img_url)
   end
 end
