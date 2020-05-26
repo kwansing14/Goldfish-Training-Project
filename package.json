@@ -1,5 +1,7 @@
 {
   "name": "Goldfish-Training-Project",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "yarn": "^1.22.4"
+  }
 }
