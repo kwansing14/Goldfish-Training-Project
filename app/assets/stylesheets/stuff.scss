@@ -4,6 +4,10 @@ body {
   padding: 0px;
 }
 
+select {
+	display: inline;
+}
+
 .tprogram div img {
 	width:100%
 }
@@ -23,26 +27,30 @@ body {
 	font-size: 10px;
 }
 
+.fishicon{
+	color: rgba(0,0,0,0.1);
+	transition: all 0.5s ease 0s;
+}
+
+.fishicon:hover{
+	color: rgb(100,181,246);
+}
+
 .card-content {
 	overflow: hidden;
 	&:hover {
 		.scrolling {
-    	/* This is not completely accurate. It resizes to 2x the current width. */
-    	left: -40%;
+    	left: -100%;
     	width: 200%;
 		}
 	}
-}
-
-.ellipsis-active {
-	background-color: #700;
 }
 
 .scrolling {
     position: relative;
     left: 0%;
     width: 100%;
-    transition: left 3s, width 3s ease;
+    transition: left 2s, width 2s ease;
 }
 
 .innertext {

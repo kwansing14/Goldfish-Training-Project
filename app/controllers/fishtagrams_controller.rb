@@ -5,6 +5,7 @@ class FishtagramsController < ApplicationController
   end
 
   def edit
+    byebug
     @fishtagram = Fishtagram.find(params[:id])
   end
 
@@ -13,6 +14,7 @@ class FishtagramsController < ApplicationController
   end
 
   def update
+    byebug
     @fishtagram = Fishtagram.find(params[:id])
     @fishtagram.update(fishtagram_params)
     redirect_to @fishtagram
@@ -38,6 +40,11 @@ class FishtagramsController < ApplicationController
     else
       render 'new'
     end
+  end
+
+  def index_sort
+    @fishtagrams = Fishtagram.where(user_id: current_user.id)
+    render 'index'
   end
 
   private
