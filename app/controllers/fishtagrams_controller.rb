@@ -5,7 +5,6 @@ class FishtagramsController < ApplicationController
   end
 
   def edit
-    byebug
     @fishtagram = Fishtagram.find(params[:id])
   end
 
@@ -14,7 +13,6 @@ class FishtagramsController < ApplicationController
   end
 
   def update
-    byebug
     @fishtagram = Fishtagram.find(params[:id])
     @fishtagram.update(fishtagram_params)
     redirect_to @fishtagram
